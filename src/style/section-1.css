@@ -1,0 +1,125 @@
+.header__section-1{
+    padding-top: 80px!important;
+    display: flex;
+    justify-content: center;
+
+}
+.section-1__title,
+.section-1__img
+ { display: flex;
+    flex-direction: column;
+    flex: 1 0 50%;
+}
+.my_name{
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+}
+.my_name span{
+    color: #098BED;
+    font-family: Pacifico;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 106.5%;
+}
+.my_name h3{
+    color: #000;
+font-family: Poppins;
+font-size: 60px;
+font-style: normal;
+font-weight: 600;
+line-height: 106.5%;
+}
+.section-1__title-subtitle{
+    width: 590px;
+    margin-top: 35px;
+}
+.section-1__title-subtitle p{
+    color: rgba(0, 0, 0, 0.70);
+    font-family: Poppins;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%; /* 28px */
+}
+.expirens{
+    width: 413px;
+    height: 123px;
+    display: flex;
+   align-items:center;
+   justify-content: flex-start;
+    gap: 35px;
+}
+.expirens > div{
+    display: flex;
+    padding: 24px 40px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 24px;
+    background: rgba(170, 177, 204, 0.10);
+
+}
+.expirens span{
+    color: #098BED;
+    font-family: Poppins;
+    font-size: 38px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 140%; /* 53.2px */
+}
+
+.clients > h2{
+    color: #000;
+    font-family: Poppins;
+    font-size: 38px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 140%;
+}
+.expirens .exp__title{
+    flex-direction: row;
+    color: #000;
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%; /* 22.4px */
+}
+.clients,
+.experience
+{
+    display: flex;
+    flex-direction: column;
+}
+/* section-1 title oxiri  */
+
+
+/*section-1-im boshi */
+.section-1__img{
+    width: 521px;
+    height: 560px;
+    border-radius: 12px;
+    background: url("../img/Rectangle\ 1.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+   
+  /*  Image · 1,152 x 2,048 */
+
+}
+.doshshed{
+    transform: translate(24px, 24px);
+    position: relative;
+    z-index: -1;
+    width: 521px;
+    height: 560px;
+    border-radius: 12px;
+    border: 1px dashed #098BED;
+    /* background: lightgray 50% / cover no-repeat, #D9D9D9; */
+}
+/*section-1-im oxiri */
+
+/*section-2-im boshi */
+
