@@ -1,0 +1,147 @@
+/* heafer-section-4 boshi*/
+.header__section-4 {
+    
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    background: #F7F8FA;
+    
+    
+}
+.section-4__1{
+    padding-top: 60px;
+}
+.section-4__2{
+    padding-bottom: 60px;
+}
+.section-4__1,
+.section-4__2{
+   
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    
+    
+}
+.section-4__1_f,
+.section-4_2_f
+{
+    flex: 1 0 50%;
+}
+.section-4__1 .my_name{
+    margin-bottom: 43px;
+}
+.section-4__1_f .btn{
+    display: flex;
+width: 248px;
+height: 50px;
+padding: 10px;
+justify-content: center;
+align-items: center;
+gap: 10px;
+flex-shrink: 0;
+}
+.section-4__1 .my_name span{
+  
+    font-size: 30px;
+    
+}
+.section-4__1 .my_name h3{
+    font-size: 40px;
+}
+.section-4_2_f{
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+.section-4_2_f h4{
+
+    color: #000;
+    font-family: Poppins;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 140%; /* 30.8px */
+}
+
+/* section-4 cars boshi */
+.section-4__2{
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.section-4_2_f--card{
+    width: 578px;
+    height: 60px;
+    flex-shrink: 0;
+    border-radius: 12px;
+    background: #FFF;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 1rem;
+
+}
+.section-4_2_f--card h4{
+    color: #000;
+        font-family: Poppins;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 140%; /* 25.2px */
+}
+.section-4_2_f--card h4 span{
+    color: #098BED;
+}
+.section-4_2_f--card > span{
+    padding-left: 1rem;
+}
+
+.section-4__2{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+.section-4__2 .section-4__2-cards{
+    border-radius: 18px;
+    background: #FFF;
+    width: 285px;
+    height: 162px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    padding: 18px;
+ 
+}
+.section-4__2 .section-4__2-cards .card__title__1{
+    display: flex;
+   align-items:center;
+}
+.section-4__2 .section-4__2-cards span svg{
+    border-radius: 50%;
+    background: #F7F8FA;
+    padding: 7px;
+    gap: 18px;
+    margin-right: 18px;
+}
+.section-4__2 .section-4__2-cards .card__title__2 h4{
+    color: rgba(0, 0, 0, 0.70);
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%; /* 22.4px */
+
+}
+.section-4__2 .section-4__2-cards span{
+    color: #000;
+font-family: Poppins;
+font-size: 22px;
+font-style: normal;
+font-weight: 600;
+line-height: 140%; /* 30.8px */
+}
+
+

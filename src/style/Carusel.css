@@ -8,18 +8,19 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 18px;
+    
+    gap: 20px;
 }
 .card .img{
     width: 387px;
-    height: 380px;
+    height: 282px;
     border-radius: 12px;
-    
+    /* background-image: url("../img/Rectangle3.png");
     background-position: 0px -121px;
     background-size: contain;
-    background-repeat: no-repeat;
-   
-    background-color: lightgray;
+    background-repeat: no-repeat; */
+/*    
+    background-color: lightgray; */
 }
 
 .sub__title{

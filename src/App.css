@@ -2,9 +2,19 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 .content{
-  padding: 0 96px 0 120px;
+  padding: 0 120px;
 }
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+.px__30{
+ font-size: 30px;
+}
+.px__40{
+  font-size: 40px;
+ }
+ .pointer{
+  cursor: pointer;
+ }

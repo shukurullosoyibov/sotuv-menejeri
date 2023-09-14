@@ -1,6 +1,8 @@
 /* navbar boshi */
 .nav-bar{
-    position: fixed;
+    
+   position: sticky;
+    top: 0px;
     z-index: 99;
     padding: 18px 120px;
     width: 100%;
@@ -8,9 +10,10 @@
     flex-direction: row;
     justify-content: space-between;
     flex-wrap: nowrap;
-    background: hsla(0, 0%, 0%, 0.364);
+    background: #000;
+    /* background: hsla(0, 0%, 0%, 0.364); */
 }
-.logo{
+.logo{ cursor: pointer;
      width: 159px;
     height: 48px;
     color: black;
@@ -20,7 +23,7 @@
     cursor: pointer;
 }
 .logo span{
-  
+    cursor: pointer;
     color: #000;
         font-family: Poppins;
         font-size: 16px;
@@ -52,26 +55,91 @@
     flex-shrink: 0;
 }
 .btn{
-    outline: none;
-
-    border-color: transparent;
-    color: #fff;
-    padding: 10px;
-    width: 178px;
-    height: 48px;
-    border-radius: 5px;
+    cursor: pointer;
+    border-radius: 12px;
     background: #098BED;
+    outline: none;
+    text-align: center;
+    border-color: transparent;
     color: #FFF;
     font-family: Poppins;
     font-size: 16px;
     font-style: normal;
     font-weight: 600;
     line-height: normal;
+    display: flex;
+    width: 248px;
+    height: 50px;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
 }
 ul > li.active,
 ul > li:hover{
     color: #62BCFF;
 }
+ /* dropdown boshi*/
+ .register.dropdown{
+    cursor: pointer;
+    width: 94px;
+    height: 44px;
+    border-radius: 500px;
+    background: #098BED;
+    position: relative;
+    
+    
+ }
+ .dropdown__item{
+    border-radius: 12px;
+    background: #FFF;
+    box-shadow: 0px 9px 18px 0px rgba(0, 0, 0, 0.10);
+    position: absolute;
+    background: #fff;
+    width: 275px;
+    height: 122px;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    flex-direction: column;
+    cursor: pointer;
+    
+    /* transform: translateY(90px); */
+    transform: translate(-32% , 90px);
+    /* transform: translateX(40px); */
+ }
+ .btn__login,
+ .btn__sign{
+    
+    color: #fff;
+    outline: none;
+    border-color:transparent;
+    display: flex;
+    width: 239px;
+    height: 44px;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 12px;
+   
+    color: #FFF;
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+ }
+ .btn__login{
+    background: #098BED;
+ }
+ .btn__sign{
+    color: #098BED;
+ }
+ 
+ /* dropdown oxiri*/
 
 
 
@@ -96,9 +164,12 @@ ul > li:hover{
    
     position: absolute;
     transform: translateY(-50%);
-   
+    display: flex;
+    justify-content: center;
+    align-items:center;
     bottom:0;
     text-align: center;
+    flex-direction: column;
    
 
 }
