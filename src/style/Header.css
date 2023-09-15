@@ -1,6 +1,6 @@
 /* navbar boshi */
 .nav-bar{
-    
+    text-decoration: none;
    position: sticky;
     top: 0px;
     z-index: 99;
@@ -14,6 +14,7 @@
     /* background: hsla(0, 0%, 0%, 0.364); */
 }
 .logo{ cursor: pointer;
+    text-decoration: none;
      width: 159px;
     height: 48px;
     color: black;
@@ -23,6 +24,7 @@
     cursor: pointer;
 }
 .logo span{
+    text-decoration: none;
     cursor: pointer;
     color: #000;
         font-family: Poppins;
@@ -30,6 +32,9 @@
         font-style: normal;
         font-weight: 600;
         line-height: 106.5%; /* 17.04px */
+}
+.nav-bar Link{
+    text-decoration: none;
 }
 .nav-bar ul{
     color: #fff;
@@ -39,7 +44,9 @@
     column-gap: 30px;
     
 }
-.nav-bar ul li{
+.nav-bar ul li a{
+    text-decoration: none;
+    color: #fff;
     cursor: pointer;
     text-align: center;
     line-height: 200%;
@@ -76,8 +83,12 @@
     gap: 10px;
     flex-shrink: 0;
 }
-ul > li.active,
-ul > li:hover{
+ul > li.active a,
+ul > li a:hover{
+    
+    transform: scale(1.1);
+    transition: all 0.3s ease-in;
+  
     color: #62BCFF;
 }
  /* dropdown boshi*/
@@ -90,6 +101,16 @@ ul > li:hover{
     position: relative;
     
     
+ }
+ .register.dropdown:hover,
+ 
+ 
+ .dropdown__item .btn__sign:hover{}
+ .dropdown__item .btn__login:hover
+ {
+    
+    background: #098aed8b;
+    transition: all 0.2s ease-in;
  }
  .dropdown__item{
     border-radius: 12px;

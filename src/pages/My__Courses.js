@@ -2,12 +2,11 @@ import React from 'react'
 import CaruselItem from '../components/CaruselItem'
 import '../style/myCourses.css'
 import '../style/Carusel.css'
-
-const myCourses = ({ data = [] }) => {
+const My__Courses = ({ data = [] }) => {
   return (
     <div className='myCoursesHeader'>
         
-          <div className='cards'>
+            <div className='cards'>
             {/* cardlar */}
             
             {
@@ -16,10 +15,10 @@ const myCourses = ({ data = [] }) => {
                 ))
             }
             {/* cardlar oxiri */}
-           
-        </div>
+            
+             </div>
     </div>
   )
 }
 
-export default myCourses
+export default My__Courses

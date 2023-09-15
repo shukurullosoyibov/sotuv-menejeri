@@ -21,3 +21,27 @@
     
     background: #F7F8FA;    
 }
+.nav-bar.footer__nav ul li:hover {
+    transform: scale(1.09);
+    transition: all 0.4s ease-in;
+    color: #098BED;
+
+}
+.nav-bar.footer__nav ul li.active{
+    background:#098BED;
+    color:#FFF;
+}
+
+.nav-bar.footer__nav ul li:hover {
+    color: #098BED;
+}
+.nav-bar.footer__nav ul li{
+    
+    color: #000;
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 106.5%; /* 17.04px */
+
+}

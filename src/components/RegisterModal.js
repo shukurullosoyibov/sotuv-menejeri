@@ -1,5 +1,6 @@
 import React from 'react'
 
+
 const RegisterModal = (props) => {
   return (
     <div div className='register__modal'>
