@@ -3,8 +3,12 @@
   margin: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
+
+ 
 }
 .content{
+  margin: 0 auto;
+  max-width: 1440px;
   padding: 0 120px;
 }
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
@@ -17,4 +21,21 @@
  }
  .pointer{
   cursor: pointer;
+ }
+
+ .App{
+  
+  margin: 0 auto;
+  max-width: 1440px;
+ 
+ }
+ .h3{
+  
+  color: #000;
+
+font-family: Poppins;
+
+font-style: normal;
+font-weight: 600;
+line-height: normal;
  }

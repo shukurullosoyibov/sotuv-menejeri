@@ -12,9 +12,12 @@ import RootLayout from './layout/RootLayout';
 import Sections from './components/Sections';
 import NotFound from './pages/NotFound';
 import My__Courses from './pages/My__Courses';
+import { useState } from 'react';
+import SelectesCourse from './pages/SelectesCourse';
 
 
 function App() {
+  
   const data = [
     {   id: 0,
     
@@ -90,13 +93,15 @@ function App() {
         <Route  element={<RootLayout />}>
             <Route exact path="/" element={<Sections data = {data} />}  />
             <Route path="/courses" element={<My__Courses data = {data} />}  />
+            <Route path="/course__1" element={< SelectesCourse />}  />
+            
             <Route path="*" element={ <NotFound />} /> 
         </Route>
     )
 )
   return (
     <div className="App">
-     
+   
      <RouterProvider router={routes} />
     </div>
   );

@@ -1,0 +1,84 @@
+.selected__course{
+    padding: 45px 120px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+}
+.selesct__1,
+.selesct__2{
+    width: 100%;
+    flex: 1 0 calc(50% - 10px);
+}
+.selesct__1 h3{
+    
+    font-size: 43px;
+    
+    margin-bottom: 20px;
+}
+.selesct__1 p{
+    width: 508px;
+    color: rgba(0, 0, 0, 0.80);
+    font-weight: 400;
+    font-size: 18px;
+    
+    margin-bottom: 48px;
+    }
+.selesct__1 h5{
+    font-size: 24px;
+ 
+color: rgba(0, 0, 0, 0.80);
+
+}
+.keyConsepts{
+        flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+}
+.keyConsepts .div{
+    width: 413px;
+    display: grid;
+    place-items: center;
+    margin-top: 27.5px;
+    display: flex;
+    flex-wrap: nowrap;
+    column-gap: 1.1rem;
+    color: #000;
+    font-family: Poppins;
+    font-size: 1px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 140%;
+
+}
+.selesct__1 > p{
+    width: 100%;
+    margin-top:33px;
+    width: 504px;
+    color: rgba(0, 0, 0, 0.80);
+    font-family: Poppins;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.selesct__2 .img{
+    margin-bottom: 30px;
+    width: 615px;
+    height: 520px;
+    flex-shrink: 0;
+    border-radius: 18px;
+    border-radius: 18px;
+
+
+
+    background-image: url("https://s3-alpha-sig.figma.com/img/f5cb/2b32/134312119200857c97bd79968ae6ccbd?Expires=1695600000&Signature=Qr6c88OrLpUmCFz8SpWZCPfZ8xUuK4f6PPsPdUqjp7JCWZ7K-Nc60WhizC900aS6dHBv44uiuxmH5q7Vzc9nHe8r5iQtq9FIJaOIG3jJWhWeJekhHi9kKDDfa039k~8AAgxkzDE7M-m9H66b6oin9XH1abXMfztVCI6X4DXUDFdUPp8Rvp0tsRBzroWAD9vT-NLeI2bfV~CxrCahL9rAhFCa9Cmt~M0bsXRU-bL4nHXEhtfmGR~ev4xizbwdjPqke7vuylxc65DEf6vNl3ItPVuZ~ej3AD1hLwVnGvJvpa8ZcAn12~zGhYTc7sfvGm8pStyvBmV0ChZXHXRqr0gWtQ__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4") ;
+
+    background-position: 0px -176px, 100% 100%;
+
+    background-size: cover;
+    background-repeat: no-repeat; 
+
+    
+
+}

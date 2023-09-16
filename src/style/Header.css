@@ -1,4 +1,9 @@
 /* navbar boshi */
+:root{
+    --nav__bg_black : rgb(0, 0, 0);
+    --nav__bg_light : #F7F8FA;
+
+}
 .nav-bar{
     text-decoration: none;
    position: sticky;
@@ -10,7 +15,7 @@
     flex-direction: row;
     justify-content: space-between;
     flex-wrap: nowrap;
-    background: #000;
+    background-color: var(--nav__bg_black);
     /* background: hsla(0, 0%, 0%, 0.364); */
 }
 .logo{ cursor: pointer;
@@ -18,12 +23,14 @@
      width: 159px;
     height: 48px;
     color: black;
+    
     background: #D9D9D9;
     line-height: 48px;
     text-align: center;
     cursor: pointer;
 }
-.logo span{
+.logo span{ 
+    background: #D9D9D9;
     text-decoration: none;
     cursor: pointer;
     color: #000;
@@ -37,7 +44,7 @@
     text-decoration: none;
 }
 .nav-bar ul{
-    color: #fff;
+    
     text-decoration: none;
     list-style: none;
     display: flex;
@@ -46,7 +53,7 @@
 }
 .nav-bar ul li a{
     text-decoration: none;
-    color: #fff;
+    color: black;
     cursor: pointer;
     text-align: center;
     line-height: 200%;

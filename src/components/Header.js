@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import "../style/Header.css"
 import "../style/section-1.css"
 import "../style/section-4.css"
@@ -88,6 +88,13 @@ const Header = () => {
     //         card_link_span : "Batafsil ko'rish"
     //     }
     // ]
+    useEffect( () =>{
+        const navBar = document.querySelector('.nav-bar');
+        if (navBar) {
+          navBar.style.backgroundColor = 'var(--nav__bg_black)';
+        }
+      }, [])
+    
     const handelModal = () => {
             setModal(!isModal);
     }

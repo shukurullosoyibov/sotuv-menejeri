@@ -1,5 +1,5 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 
 function Footer() {
   return (
@@ -7,17 +7,19 @@ function Footer() {
         {/* footer boshi */}
             <div className="footer">
                     <div className="nav-bar footer__nav">
-                            <div className="logo">
-                                <span>Logo</span>
-                            </div>
+                            <Link to="/"> 
+                                <div className="logo">
+                                    <span>Logo</span> 
+
+                                </div>
+                            </Link> 
                             <ul>
-                                <NavLink to='#section3'>
-                                <li> Biz kimmmiz? </li></NavLink> 
-                                <li> Kurslar</li>
-                                <li> Xizmatlar</li>
-                                <li> Mustaqil ta'lim</li>
-                                <li> Bepul darslar </li>
-                                <li> Fikrlar </li>
+                                <li className=''> <a className='active' href='#bizkimmiz'>Biz kimmmiz? </a> </li>
+                                <li> <a href='#kurslar' >Kurslar</a></li>
+                                <li> <a href='#xizmatlar' >Xizmatlar</a></li>
+                                <li> <a href='#mustaqiltalim' >Mustaqil ta'lim</a></li>
+                                <li> <a href='#bepuldarslar' >Bepul darslar</a></li>
+                                <li> <a href='#fikrlar' >Fikrlar</a></li>
                             </ul>
                             <div className="register">
                                 <button className="rig btn">Ro'yxatdan o'tish</button>

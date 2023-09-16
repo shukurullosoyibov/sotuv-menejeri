@@ -21,22 +21,22 @@
     
     background: #F7F8FA;    
 }
-.nav-bar.footer__nav ul li:hover {
+.nav-bar.footer__nav ul li a.active {
+ 
+    color: #098BED;
+
+}
+
+
+.nav-bar.footer__nav ul li a:hover {
+    color: #098BED;
     transform: scale(1.09);
     transition: all 0.4s ease-in;
-    color: #098BED;
-
-}
-.nav-bar.footer__nav ul li.active{
-    background:#098BED;
-    color:#FFF;
-}
-
-.nav-bar.footer__nav ul li:hover {
-    color: #098BED;
-}
-.nav-bar.footer__nav ul li{
     
+
+}
+.nav-bar.footer__nav ul li a{
+    text-decoration: none;
     color: #000;
     font-family: Poppins;
     font-size: 16px;
