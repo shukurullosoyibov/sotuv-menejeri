@@ -1,29 +1,39 @@
 import React from 'react'
 import SelCourse from '../components/SelCourse'
 import '../style/seleact.css'
+import { Link } from 'react-router-dom';
 
 const SelectesCourse = () => {
     const select = [
-        
-            {id:0,
-            course__name: 'Sotuvlarni bosharish',
-            course_item: {
-                id:0,
-                itemName: 'Kirish',
-                srcURL: "https://www.youtube.com/watch?v=0NdDKClb1eQ" 
-            }},
-            
-            {id:1,
-                course__name: "Anonim qo'ng'iroqlar",
-                course_item: {
-                    id:1,
-                        itemName: "Sotuv o'zi nima",
-                        srcURL: "https://www.youtube.com/watch?v=ToBF-MDbhJ0" ,
-                }
-            }
-            
-        
-    ]
+        {
+          id: 0,
+          course__name: 'Sotuvlarni bosharish',
+          course_item: [
+            {
+              id: 0,
+              itemName: 'Kirish',
+              srcURL: 'https://www.youtube.com/watch?v=0NdDKClb1eQ',
+            },
+          ],
+        },
+        {
+          id: 1,
+          course__name: "Anonim qo'ng'iroqlar",
+          course_item: [
+            {
+              id: 0,
+              itemName: "Kirish",
+              srcURL: "https://www.youtube.com/watch?v=ToBF-MDbhJ0",
+            },
+            {
+              id: 1,
+              itemName: "Sotuv o'zi nima",
+              srcURL: "https://www.youtube.com/watch?v=ToBF-MDbhJ0",
+            },
+          ],
+        },
+      ];
+      
   return (
     <div className='selected__course'>   
         <div className="selesct__1">
@@ -84,34 +94,26 @@ const SelectesCourse = () => {
             <p>
                 Risus vitae laoreet dictum, turpis dolor rhoncus nulla, in placerat dolor felis ut mi. Morbi mattis elit eget mauris semper, quis ullamcorper velit facilisis.
             </p>
+            <button>
+        <Link to ='/payment' >Kursni sotib olish</Link>
+      </button>
         </div>
         <div className="selesct__2">
             <div className="img">
             
             </div>
-            {   
-                select.map( (el)=>(
-                   
+            
 
-                     <SelCourse key={el.id} {...el} />
-
-                )
-                
-                )
-            }
-            <div className="course__contents">
-                <h3>Course Content</h3>
-                <div className='course__cont'>
-                    
-                    <span>
-                    
-                    </span>
-
+                <div>
+                    {select.map((course) => (
+                        <SelCourse key={course.id} course_item={course.course_item} course__name={course.course__name} length={course.course_item.length} />
+                    ))}
                 </div>
-            </div>
+
+            
         </div>
 
-        
+       
     </div>
   )
 }

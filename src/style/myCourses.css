@@ -15,3 +15,72 @@
     padding: 20px 120px;
    
 }
+.lessonContent{
+    display: flex;
+    align-items:center;
+    justify-content: space-between;
+}
+.lessonContent h3{
+    color: #098BED;
+    text-align: right;
+    font-family: Poppins;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 140%; /* 25.2px */
+    }
+.lessonContent h4{
+        color: #000;
+    font-family: Poppins;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 140%; /* 25.2px */
+    }
+.course_1 .main{
+  
+  height: 53px;
+
+    display: flex;
+    justify-content: space-between;
+}
+.topicName{
+    flex: 1 0 80%;
+    justify-self: flex-start;
+}
+.course_1{
+    padding: 20px;
+
+flex-shrink: 0;
+    margin-bottom: 20px;
+    border-radius: 18px;
+    width: 615px;
+    background: #F7F8FA;
+    border-radius: 18px;
+    background: #F7F8FA;
+    padding: 0 auto;
+}
+.mainDrContent{
+    padding: 10px 0 ;
+    display: flex;
+    align-items:center;
+    justify-content: space-between;
+}
+.mainDrContent span{
+    flex: 1 0 80%;
+}
+.main__content{
+    padding: 20px;
+    width: 575px;
+    min-height: 75px;
+    /* height: 174px; */
+    flex-shrink: 0;
+    border-radius: 18px;
+    background: #FFF;   
+}
+.mainDrContent:hover{
+    cursor: pointer;
+    transform: scale(1.0011);
+    color:   #098BED;
+    transition: all 0.4s;
+}

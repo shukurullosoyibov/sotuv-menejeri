@@ -14,10 +14,15 @@ import NotFound from './pages/NotFound';
 import My__Courses from './pages/My__Courses';
 import { useState } from 'react';
 import SelectesCourse from './pages/SelectesCourse';
+import SectionsLayout from './layout/SectionsLayout';
+import RegisterModal from './components/RegisterModal';
+import ResetPaspord from './components/ResetPaspord';
+import RegisterSigup from './components/RegisterSigup';
+import Coursesales from './pages/Coursesales';
 
 
 function App() {
-  
+
   const data = [
     {   id: 0,
     
@@ -90,10 +95,17 @@ function App() {
 ]
   const routes = createBrowserRouter(
     createRoutesFromElements(
-        <Route  element={<RootLayout />}>
-            <Route exact path="/" element={<Sections data = {data} />}  />
+        <Route  element={<RootLayout  />}>
+
+            {/* <Route path="/" element={<Sections data = {data} />}  /> */}
+            <Route path="/" element={<SectionsLayout data={data}  />}>
+                 <Route path='/login'  element={<RegisterModal    />}     />
+                 <Route path='/autho'  element={<RegisterSigup />}      />
+                 <Route path='/resetpassword' element={<ResetPaspord />} />
+            </Route>
             <Route path="/courses" element={<My__Courses data = {data} />}  />
             <Route path="/course__1" element={< SelectesCourse />}  />
+            <Route path='payment' element={ <Coursesales />} />
             
             <Route path="*" element={ <NotFound />} /> 
         </Route>

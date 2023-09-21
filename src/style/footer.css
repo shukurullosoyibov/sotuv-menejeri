@@ -10,6 +10,7 @@
     justify-content: space-between;
 }
 
+
 .nav-bar.footer__nav{
         
     width: 100%;
@@ -43,5 +44,18 @@
     font-style: normal;
     font-weight: 400;
     line-height: 106.5%; /* 17.04px */
+
+}
+.rig.btn a{
+    color:#F7F8FA;
+}
+.rig.btn a,
+.nav-bar  a
+{
+    text-decoration: none;
+   
+}
+
+.pay_img{
 
 }

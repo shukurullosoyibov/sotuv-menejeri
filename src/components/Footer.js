@@ -22,7 +22,7 @@ function Footer() {
                                 <li> <a href='#fikrlar' >Fikrlar</a></li>
                             </ul>
                             <div className="register">
-                                <button className="rig btn">Ro'yxatdan o'tish</button>
+                                <i className="rig btn"><Link to='/autho'>Ro'yxatdan o'tish</Link></i>
                             </div>
                     </div>
             </div>
