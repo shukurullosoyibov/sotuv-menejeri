@@ -16,8 +16,8 @@
     flex-direction: row;
     justify-content: space-between;
     flex-wrap: nowrap;
-    background-color: var(--nav__bg_black);
-    /* background: hsla(0, 0%, 0%, 0.364); */
+    background-color:  #F7F8FA;
+ 
 }
 .logo{ cursor: pointer;
     text-decoration: none;
@@ -126,8 +126,8 @@ ul > li a:hover{
     box-shadow: 0px 9px 18px 0px rgba(0, 0, 0, 0.10);
     position: absolute;
     background: #fff;
-    width: 275px;
-    height: 122px;
+    min-width: 275px;
+    min-height: 122px;
     flex-shrink: 0;
     display: flex;
     justify-content: center;
@@ -219,4 +219,68 @@ ul > li a:hover{
     position: relative;
     color: #fff;
     
+}
+
+.user_info{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: center;
+    align-content:center;
+    padding: 20px;
+    
+}
+.user_info p{
+    text-align: center;
+    color: rgba(0, 0, 0, 0.50);
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 106.5%; /* 17.04px */
+    margin-bottom: 8px;
+}
+.user_info h5{
+    text-align: center;
+    color: #000;
+    font-family: Poppins;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 106.5%; /* 19.17px */
+    margin-bottom: 27px
+}
+.user_info a span{
+
+    display: flex;
+    
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    color: #000;
+font-family: Poppins;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 106.5%; /* 17.04px */
+}
+.user_info a{
+    display: grid;
+    place-items: center;
+}
+.user_info a span:hover{
+    color:#098BED;
+}
+.user_info a span h4 {
+    
+    margin-bottom: 25px;
+    margin-left: 8px;
+}
+.user_info .red{
+    color:#E53131;
+}
+.user_info .red:hover,
+.user_info a span:hover{
+    transition: all 0.5s;
+    color:#098BED;
 }

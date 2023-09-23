@@ -114,7 +114,10 @@ const SectionsLayout = (props) => {
 
                         <div className='main-title'>
                             <p>{banner.text}</p>
-                            <button className="btn btn_hover">{banner.button_label}</button>
+                            {
+                                banner.button_url &&  <a href={banner.button_url} className="btn btn_hover">{banner.button_label}</a>
+                            }
+                           
                         </div>
                 </div>
                 {/* section-1 boshi */}

@@ -19,12 +19,7 @@ const HeaderLayout = () => {
 
     
    
-    useEffect( () =>{
-        const navBar = document.querySelector('.nav-bar');
-        if (navBar) {
-          navBar.style.backgroundColor = 'var(--nav__bg_black)';
-        }
-      }, [])
+   
     
     const handelModal = () => {
             setModal(!isModal);

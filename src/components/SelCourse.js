@@ -3,8 +3,9 @@ import { svg_coursConte1, svg_down, svg_right, svg_right2} from '../svgG/svg';
 import {  useParams } from 'react-router-dom';
 
 const SelCourse = (props) => {
+  const {courseDetails} = props;
   const {slug} = useParams();
-  const { course_item } = props;
+ 
  
   const [isVideo, setVideo] = useState(false);
 
@@ -17,15 +18,15 @@ const SelCourse = (props) => {
 
     <div className='course_1'>
       <div className="main">
-       salom {}
+       <span>{svg_coursConte1}</span> 
         <span>
-             {svg_coursConte1}
-        
+          
+        {courseDetails.title}
         </span>
         <div className='topicName'>
-              {props.course__name}
+             
                <div>
-                   {} topics  
+                   {props.openActiveLessons.length} topics  
                </div>
         </div>
         <div className="dDOwn" onClick={() => handleVideo()} >
@@ -33,7 +34,7 @@ const SelCourse = (props) => {
         </div>
       </div>
       {
-         isVideo &&  
+         props &&  
       
       <div className="main__content">
         <div className='lessonContent'>
@@ -42,7 +43,7 @@ const SelCourse = (props) => {
         </div>
        
         <div className='drOpen'>
-          {course_item.map((courseItem) => (  (
+          {props.map((courseItem) => (  (
             <div key={courseItem.id} className="mainDrContent">
             
                <i>{svg_right}</i>  

@@ -2,8 +2,10 @@ import React, { useRef, useEffect, useState } from 'react'
 import {svg1} from '../svgG/svg'
 import InputMask from 'react-input-mask';
 import ResetPaspord from './ResetPaspord';
-import { Link } from 'react-router-dom';
+import { Link} from 'react-router-dom';
 import { API_URL } from '../style/config/config';
+import { toast } from 'react-toastify';
+
 
 //const USER_REGEX = /^[a-zA-Z][a-zA-Z0-9-_]{3,24}$/;
 //cosnt PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
@@ -13,7 +15,15 @@ const RegisterModal = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [loginError, setLoginError] = useState('');
+ 
+
+    const showSuccessToast = () => {
+      toast.success('Hush kelinsiz!');
+    };
     
+    const showErrorToast = () => {
+      toast.error('Xatolik yuz berdi. Iltimos, qayta urinib ko\'ring.');
+    };
     const handlePhoneChange = (e) => {
         setUsername(e.value);
         console.log(value.length);
@@ -40,13 +50,22 @@ const RegisterModal = () => {
         })
           .then((response) => response.json())
           .then((data) => {
-            if (data.success) {
-               
+            if (data.message === 'success') {
+               alert("hush kelinsiz")
+                showSuccessToast();
+               const token = data.data.token;
+                localStorage.setItem('token', token);
+                console.log(token);
+                console.log(localStorage.getItem('token', token));
+           
               // Tizimga kirishingiz muvaffaqiyatli bo'ldi
               // Bu joyda tizimning asosiy sahifasiga yo'nlashingiz mumkin
+             
             } else {
-                
-
+              // alert("afsus xatolik")
+              showErrorToast();
+              setUsername("");
+              setPassword('');
               setLoginError('Foydalanuvchi nomi yoki parol xato. Iltimos, qayta urinib ko\'ring.');
             }
           })

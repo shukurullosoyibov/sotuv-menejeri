@@ -54,7 +54,7 @@ const RegisterSigup = () => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({firstname, phone, password,password_repeat }),
+        body: JSON.stringify({firstname,lastname, phone, password,password_repeat }),
       })
         .then((response) => response.json())
         .then((data) => {
@@ -64,13 +64,10 @@ const RegisterSigup = () => {
                 toast("success");
                 setIsRegistered(true);
                
-          
             }
            
-        
-            
           else {
-            setPasswordError(data.message);
+            setPasswordError(data.error);
           
           }
         })
@@ -78,6 +75,9 @@ const RegisterSigup = () => {
           console.error('Xatolik yuz berdi: ', error);
         });
        
+    }
+    else if( !firstname){
+      setPasswordError('ism kiritilmadi');
     }
     };
   

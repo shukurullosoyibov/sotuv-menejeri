@@ -1,25 +1,31 @@
 import React, { useEffect, useRef, useState } from 'react';
 import '../style/Verify.css';
-import { svg_prew, svg_x } from '../svgG/svg';
-import { API_URL } from '../style/config/config';
+import { svg_prew, svg_success, svg_x } from '../svgG/svg';
+
 import {  toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Link } from 'react-router-dom';
 
+
 const VerifyCode = (props) => {
-  const [verificationCode, setVerificationCode] = useState('');
+  const [code, setVerificationCode] = useState('');
   const inputRefs = [useRef(), useRef(), useRef(), useRef()]; // Inputlar uchun ref lar
 
-  const [verificationCode1, setVerificationCode1] = useState('');
-  const [verificationCode2, setVerificationCode2] = useState('');
-  const [verificationCode3, setVerificationCode3] = useState('');
-  const [verificationCode4, setVerificationCode4] = useState('');
+
   const [isSuccess, setIsSuccess] = useState(false);
   
-  const [code, setCode] = useState('');
+ 
   const [isVerified, setIsVerified] = useState(false);
   const [verificationError, setVerificationError] = useState('');
   const [time, setTime] = useState(60);
+
+  const showSuccessToast = () => {
+    toast.success('Hush kelinsiz, Muoffaqiyatli amalga oshirilda!');
+  };
+  
+  const showErrorToast = () => {
+    toast.error('Xatolik yuz berdi. Iltimos, qayta urinib ko\'ring.');
+  };
   const handleInputChange = (e, index) => {
     const value = e.target.value;
     
@@ -49,7 +55,7 @@ const VerifyCode = (props) => {
     if (time > 0) {
       intervalId = setInterval(() => {
         setTime((prevTime) => prevTime - 1);
-        setCode(verificationCode1 + verificationCode2 + verificationCode3 + verificationCode4);
+        
       }, 1000);
     } else {
       clearInterval(intervalId); // Timer tugagan
@@ -69,35 +75,43 @@ const VerifyCode = (props) => {
 
 
 
-  const handleVerification = async () => {
-    // SMS kodni serverga jo'natish
-    await fetch(API_URL + 'auth/register/verify', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ phone, code }),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        if (data.success) {
-       
-          setIsSuccess(!isSuccess);
-          setIsVerified(true);
-          console.log(data,isVerified, verificationError );
-
-        } else {
-          
-        
-          console.log(data,code);
+    const handleVerification = async () => {
+      try {
+        // SMS kodni serverga jo'natish
+        const response = await fetch('https://shark.brim.uz/api/auth/register/verify', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ phone, code }),
+        });
+        if (!response.ok) {
+          throw new Error('Tarmoq javobi yaxshi emas');
         }
-      })
-      .catch((error) => {
-        setVerificationError(error);
+        const data = await response.json();
+    
+        if (data.message === 'success') {
+          setIsSuccess(true);
+          setIsVerified(true);
+          alert('tabriklaymiz', data.status)
+          console.log(data, isVerified, verificationError);
+    
+          // Tokenni olish va `localStorage` ga saqlash
+          const token = data.data.token;
+          localStorage.setItem('token', token);
+          console.log(token);
+          console.log(localStorage.getItem('token', token));
+          showSuccessToast();
+        } else {
+          showErrorToast();
+          console.log(data, code);
+        }
+      } catch (error) {
+        setVerificationError(error.message);
         console.error('Xatolik yuz berdi: ', error);
-      });
-      toast.success("salom");
-  };
+      }
+    };
+    
  
   return (
     <div className='verify'>
@@ -120,7 +134,7 @@ const VerifyCode = (props) => {
                       key={index}
                       ref={inputRef}
                       type="text"
-                      value={verificationCode[index] || ''}
+                      value={code[index] || ''}
                       onChange={(e) => handleInputChange(e, index)}
                     />
                   ))}
@@ -135,8 +149,14 @@ const VerifyCode = (props) => {
           )}
         </>
       ) : (
-        <div className="succeess">
-          <p>Kodni tasdiqlash muvaffaqiyatli bo'ldi.</p>
+        <div className="succeess very">
+          <div>
+          <span>{svg_success} </span>
+          </div>
+          
+          <div>Muvaffaqiyatli ro’yxatdan o’tdingiz!</div>
+          <div>
+           <Link to="/login" className='btn btn_hover'>Tizimga kirish</Link> </div>
         </div>
       )}
     </div>
