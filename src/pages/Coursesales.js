@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import Sections from '../components/Sections'
-import { svg_click, svg_down, svg_download, svg_lock, svg_next, svg_payme, svg_prew, svg_right, svg_right2 } from '../svgG/svg'
+
+import {svg_down, svg_download, svg_lock, svg_next,  svg_prew,  svg_right } from '../svgG/svg'
 import '../style/CourseSales.css'
-import { Link, NavLink } from 'react-router-dom'
+
 
 const Coursesales = () => {
   const [itemID, setItemID] = useState(0);
@@ -71,7 +71,7 @@ const Coursesales = () => {
             ))}
           </div>
           <div className="course_details">
-            <div className="payment">
+            {/* <div className="payment">
                     <div className="pay_detalis">
                         <span>Kursni sotib olish</span>
                         <i>
@@ -109,7 +109,7 @@ const Coursesales = () => {
                     </div>
 
 
-            </div>
+            </div> */}
             <div className="courseSRC">
               <h2>
               Videodars yozma variantini yuklab olish

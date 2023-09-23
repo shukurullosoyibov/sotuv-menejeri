@@ -66,16 +66,10 @@
     justify-content: center;
     align-items:center;
     border-radius: 12px;
-    background: url('https://s3-alpha-sig.figma.com/img/d6eb/73b5/e710e1fe0bf420a9873b37aa5b5a9172?Expires=1695600000&Signature=kABvzwEcavOz7oNEIH6JIaA1D2kGgNo75-9CexWkch79bkeY-N6nGDsH90WpTDb-TGq5d5bQDMTQrNTDov2ABlBOZmoGU11lntMfW9Cz~hwDaDvmscGftQtAFqwOspb0lASUGew2E83or~yamB7kxkMBatV-VzYmV7DZ7MMsstmJON7YRP8hGStU1bQOBw0c0yJu5-0Pj7w45SHPZSP4FaGSnEUfRXKIwtArA-Bi~R28qWPHm081U8NND8lx4sgRaf980GJ~MMmVTnkUCyz47Dge2xOtm7jvSTJuIq9kIRGNq09AyAXyd9a75eHBB8wBXHJ-U-sAFpDKDMfoLTOK2Q__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4'), lightgray -39.985px -9px / 120.664% 105.512% no-repeat;
-    background-size: contain;
-    background-repeat: no-repeat;
+   
     
 }
-.you-tube__logo img{
-    position: relative;
-    width: 85px;
-    height: 63px;
-    flex-shrink: 0;
-    border-radius: 12px;
+.you-tube__logo iframe{
+  border-radius: 12px;
         
 }

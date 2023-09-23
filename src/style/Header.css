@@ -2,6 +2,7 @@
 :root{
     --nav__bg_black : rgb(0, 0, 0);
     --nav__bg_light : #F7F8FA;
+    --btn__hover: rgba(5, 25, 174, 0.853);
 
 }
 .nav-bar{
@@ -184,7 +185,7 @@ ul > li a:hover{
     justify-content: center;
     
     flex-shrink: 0;
-    background: url('../img/Sotuv\ Call\ Center\ 4.png'), lightgray -402px -378.886px / 163.056% 196.704% no-repeat;
+    background: lightgray -402px -378.886px / 163.056% 196.704% no-repeat;
     background-repeat: repeat;
     position: relative;
 }

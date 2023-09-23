@@ -3,15 +3,19 @@ import {svg1} from '../svgG/svg'
 import InputMask from 'react-input-mask';
 import ResetPaspord from './ResetPaspord';
 import { Link } from 'react-router-dom';
+import { API_URL } from '../style/config/config';
 
 //const USER_REGEX = /^[a-zA-Z][a-zA-Z0-9-_]{3,24}$/;
 //cosnt PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
 const RegisterModal = () => {
     const [value, setValue] = useState('+998');
     const [isPasswordModal, setPasswordModal] = useState(false);
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
+    const [loginError, setLoginError] = useState('');
     
     const handlePhoneChange = (e) => {
-        setValue(e.value);
+        setUsername(e.value);
         console.log(value.length);
       };
     const handleReset = () =>{
@@ -24,6 +28,32 @@ const RegisterModal = () => {
         }
         
     }
+    const handleLogin = (e) => {
+        e.preventDefault();
+        // Foydalanuvchi nomi va parolni serverga yuborish
+        fetch(API_URL+'auth/register/login', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ username, password }),
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            if (data.success) {
+               
+              // Tizimga kirishingiz muvaffaqiyatli bo'ldi
+              // Bu joyda tizimning asosiy sahifasiga yo'nlashingiz mumkin
+            } else {
+                
+
+              setLoginError('Foydalanuvchi nomi yoki parol xato. Iltimos, qayta urinib ko\'ring.');
+            }
+          })
+          .catch((error) => {
+            console.error('Xatolik yuz berdi: ', error);
+          });
+      };
       
   return (
     <>  
@@ -47,7 +77,7 @@ const RegisterModal = () => {
                                     onChange={(e)=> handlePhoneChange(e.target)}
                                     placeholder='+998'
                                     type="tel"
-                                    value={value}
+                                    value={username}
                                     // Add any other necessary attributes or event handlers
                                 />
                                     
@@ -57,15 +87,15 @@ const RegisterModal = () => {
                                 <label  className='modal_input' >
                                     Parol
                                     {/* <input type="password" placeholder='*********' /> */}
-                                <input type="password"  />
+                                <input type="password" value={password} onChange={(e)=>setPassword(e.target.value)}/>
                                 </label>
                             </div>
                             <div>
                                 <Link to='/resetpassword' >Parolingizni unutdingizmi?</Link>
                             </div>
                         {<div className="modal_register">
-                            <a className='btn__login pointer'>Tizimga kirish</a>
-                            <a  className='btn__sign pointer'>
+                            <button onClick={(e)=>handleLogin(e)} className='btn__login pointer'>Tizimga kirish</button>
+                            <Link to='/autho'  className='btn__sign pointer'>
                                 <span>
                             
                                     {
@@ -73,7 +103,7 @@ const RegisterModal = () => {
                                     }
                                 </span>
                                 Ro'yxatdan o'tish
-                            </a>
+                            </Link>
                             </div> }        
                             
                         </form>

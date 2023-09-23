@@ -1,0 +1,213 @@
+
+.paymentSection{
+    position: fixed; /* Stay in place */
+    z-index: 100; /* Sit on top */
+    left: 0;
+    top: 0;
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.4);
+    width: 100vw;
+    height: 100vh;
+    
+    place-items: center;
+    z-index: 999;
+}
+.payment .goBack svg:hover{
+    transform: scale(1.1);
+
+    
+}
+.payment .goBack{
+    position: absolute;
+    z-index: 1000;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+}
+.payment{
+    position: relative;
+    margin: 0 auto;
+    display: flex;
+    width: 789px;
+    height: 506px;
+    flex-shrink: 0;
+  
+    flex-direction: row;
+    padding: 20px;
+    border-radius: 12px;
+    background: #F7F8FA;
+   
+   
+   
+}
+.pay_detalis{
+   flex: 1 0 60%;
+   justify-content: space-between;
+ 
+}
+
+.pay_detalis span{
+    color: #000;
+    font-family: Poppins;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 140%; /* 33.6px */
+    }
+
+.pay_detalis i{
+    color: rgba(0, 0, 0, 0.80);
+    font-family: Poppins;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.pay_img {
+   
+    flex: 1 0 40%;
+    overflow: hidden;
+   border-bottom-right-radius: 10px;
+
+}
+.pay_img img{
+    transform: rotateY(180deg) translateX(-50px);
+    width: 110%;
+    height: 130%;
+    
+}
+.payment_selects{
+    background: #FFF;
+    margin-top: 24px;
+    display: flex;
+    padding: 24px;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 12px;
+    
+   
+    gap: 24px;
+}
+.payment_select > span{
+    color: rgba(0, 0, 0, 0.80);
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+}
+.payment_select {
+    background: #FFF;
+    border-top-right-radius: 12px;
+    border-top-left-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+    gap: 18px;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.421);
+}
+.price_title{
+    color: rgba(0, 0, 0, 0.80);
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.css-3yl5u2{
+display: flex;
+flex-direction: column;
+gap: 1.7rem;
+}
+.price_main{
+   
+  height: 48px;
+width: 100%;
+justify-content: space-between;
+align-items: center;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+.price_chegirma{
+  display: flex;
+  flex-direction: column;
+  
+   align-items:flex-end;
+}
+.payment_selects button i{
+    color: #FFF;
+    font-family: Poppins;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+line-height: 140%; 
+}
+.btn_hover:hover,
+.payment_selects button:hover{
+    background: var( --btn__hover);
+}
+.payment_selects button{
+
+    cursor: pointer;
+    display: flex;
+    width: 336px;
+    height: 50px;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 12px;
+    background: #098BED;
+    outline: transparent;
+    border: transparent;
+}
+.price_chegirma i{
+    color: rgba(0, 0, 0, 0.50);
+    font-family: Poppins;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    text-decoration: line-through;
+    line-height: normal;
+    text-decoration-line: strikethrough;
+}
+
+.price_chegirma span{
+    color: #098BED;
+font-family: Poppins;
+font-size: 18px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+}
+.pay_sel_item{
+    display: flex;
+    justify-content: space-between;
+}
+.pay_sel_item > label{
+    display: flex;
+    gap: 0.7rem;
+    flex-direction: column;
+}
+.pay_sel_item label div:nth-child(1){
+    width: 104px;
+    height: 70px;
+    flex-shrink: 0;
+    border-radius: 12px;
+    display: grid;
+    place-items: center;
+    border: 1px solid #0000003a;
+}
+.apelsin{
+    width: 94px;
+    height: 27px;
+    flex-shrink: 0;
+    background: url("https://s3-alpha-sig.figma.com/img/3a84/384e/7d46e6f3b96f43febecdadef70cc6e6d?Expires=1696204800&Signature=QxHpq~zzfRjY8zqi2ZldsAK6cpZ00ZYywERLvSdf6mCI8wt55TWbr1xURIyyeOENJHjMLLLpvprpm~hFrapX~kXaXMxz08lS6QUAgEguALOZzPBNfGZxtjQvGoLPfipTN9KtAYfCi9p76VZ20kKHH0bIsvFCufwSjrzxYTOOlBqypTjj0H4dZ~iJgsvkAkVCMou3JcMna6IOa2NF6xF3pNugAPC0-xmhwrotzzbFTVTOVfODgNN1Y8-EnZQlUVcPsf2Mn-mFI6yIImCys4N1i1BEfnlHWpJpeSijQcKCdvG4OvzsrDwmRuntXHrPjYYCZ9QQw53hno9cBAB3DT15Rw__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4");
+    background-repeat: no-repeat;
+    background-position: 0px -32px / 100% 344.564%;
+    background-size: contain;
+}
+

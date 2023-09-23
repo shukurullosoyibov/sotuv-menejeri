@@ -1,5 +1,5 @@
 import './App.css';
-import Header from './components/Header';
+
 import {
 
   createBrowserRouter,
@@ -9,16 +9,17 @@ import {
   Link
 } from 'react-router-dom'  //v6.16.1
 import RootLayout from './layout/RootLayout';
-import Sections from './components/Sections';
+
 import NotFound from './pages/NotFound';
 import My__Courses from './pages/My__Courses';
-import { useState } from 'react';
+
 import SelectesCourse from './pages/SelectesCourse';
 import SectionsLayout from './layout/SectionsLayout';
 import RegisterModal from './components/RegisterModal';
 import ResetPaspord from './components/ResetPaspord';
 import RegisterSigup from './components/RegisterSigup';
-import Coursesales from './pages/Coursesales';
+
+import PaymentModal from './pages/PaymentModal';
 
 
 function App() {
@@ -98,14 +99,14 @@ function App() {
         <Route  element={<RootLayout  />}>
 
             {/* <Route path="/" element={<Sections data = {data} />}  /> */}
-            <Route path="/" element={<SectionsLayout data={data}  />}>
+            <Route path="/" element={<SectionsLayout   />}>
                  <Route path='/login'  element={<RegisterModal    />}     />
                  <Route path='/autho'  element={<RegisterSigup />}      />
                  <Route path='/resetpassword' element={<ResetPaspord />} />
             </Route>
             <Route path="/courses" element={<My__Courses data = {data} />}  />
-            <Route path="/course__1" element={< SelectesCourse />}  />
-            <Route path='payment' element={ <Coursesales />} />
+            <Route path="/courses/:slug" element={< SelectesCourse />}  />
+            <Route path='/courses/:slug/payment' element={ <PaymentModal />} />
             
             <Route path="*" element={ <NotFound />} /> 
         </Route>

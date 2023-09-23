@@ -120,8 +120,11 @@ flex-shrink: 0;
    align-items:center;
 }
 .section-4__2 .section-4__2-cards span svg{
-    border-radius: 50%;
+  
+ 
+    border-radius:50%;
     background: #F7F8FA;
+   color:#000;
     padding: 7px;
     gap: 18px;
     margin-right: 18px;

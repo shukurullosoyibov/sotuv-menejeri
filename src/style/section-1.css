@@ -136,8 +136,8 @@ line-height: 106.5%;
 .header__section-2{
     margin-top: 3.5rem;
     background: #F7F8FA;
-    height: 853px;
-    padding-top: 4rem;
+   padding: 60px 120px 70px 120px;
+    /* padding-top: 4rem; */
 }
 .header__section-2 .my_name{
     display: flex;
@@ -179,8 +179,10 @@ line-height: 106.5%; /* 42.6px */
 .max__sale{
     width: 100%;
     
-    display: flex;
-    flex-wrap: nowrap;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+   
     justify-content: space-between;
 }
 .my__sales .sale__1,
@@ -188,7 +190,7 @@ line-height: 106.5%; /* 42.6px */
 .my__sales .sale__3,
 .my__sales .btn{
     /* margin: 1rem; */
-    flex: 1 0 100%;
+    flex: 1 0 292px     ;
     display: flex;
 }
 
@@ -220,21 +222,28 @@ line-height: 106.5%; /* 42.6px */
     flex-shrink: 0;
 }
 .max__sale{
-   
+   width: 577px;
     align-items:center;
+    display:grid ;
+    grid-template-columns: 1fr 1fr;
+    
 }
-.section-1__img.section_3{
-    background: none;
+.section-1__img{
+   
 }
 .section__3-img{
     width: 521px;
     height: 560px;
+   
     border-radius: 12px;
-    background: url('../img/Rectangle3.png');
+   
     background-size: cover;
     background-repeat: no-repeat;
 
 
+}
+.sale__1{
+    flex: 1 0 257px;
 }
 
 /* section-3 oxiri*/

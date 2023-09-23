@@ -11,6 +11,8 @@ import '../style/registerModal.css'
 
 // import RegisterModal from './RegisterModal'
 import { Link } from 'react-router-dom'
+import { fikrApi } from '../style/config/config'
+
 // import RegisterSigup from './RegisterSigup'
 
 // import Sections from './Sections'

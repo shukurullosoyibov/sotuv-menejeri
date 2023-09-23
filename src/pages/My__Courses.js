@@ -1,8 +1,10 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import CaruselItem from '../components/CaruselItem'
 import '../style/myCourses.css'
 import '../style/Carusel.css'
+import { AllItemsApi } from '../style/config/config'
 const My__Courses = ({ data = [] }) => {
+  const [courses, setCourses] = useState([]);
   useEffect( () =>{
     const navBar = document.querySelector('.nav-bar');
     const navLink = document.querySelector('.nav-bar ul');
@@ -13,7 +15,25 @@ const My__Courses = ({ data = [] }) => {
     }
   }, [])
 
-
+  
+  useEffect(() => {
+    fetch(AllItemsApi)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then(data => {
+        // API dan olingan "items" ma'lumotlarini saqlash
+        const items = data.data.items;
+        setCourses(items);
+        console.log(items);
+      })
+      .catch(error => {
+        console.error('Xatolik:', error);
+      });
+  }, []);
 
 
 
@@ -25,7 +45,7 @@ const My__Courses = ({ data = [] }) => {
             {/* cardlar */}
             
             {
-                data.map( el =>(
+                courses.map( el =>(
                     <CaruselItem id={el.id} {...el} />
                 ))
             }

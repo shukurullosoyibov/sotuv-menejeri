@@ -58,3 +58,7 @@
     background: #FFF;
     padding: 40px;
 }
+p.error{
+    font-size: 18px;
+    color:red;
+}
