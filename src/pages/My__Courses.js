@@ -28,7 +28,7 @@ const My__Courses = ({ data = [] }) => {
         // API dan olingan "items" ma'lumotlarini saqlash
         const items = data.data.items;
         setCourses(items);
-        console.log(items);
+        
       })
       .catch(error => {
         console.error('Xatolik:', error);

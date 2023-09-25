@@ -142,7 +142,7 @@ const RegisterSigup = () => {
                                 >
                                   Ro'yxatdan o'tish
                             </button>
-                    <a  className='btn__sign pointer'>
+                    <Link to='/login'  className='btn__sign pointer'>
                         <span>
                       
                             {
@@ -150,7 +150,7 @@ const RegisterSigup = () => {
                             }
                         </span>
                         Tizimga kirish 
-                    </a>
+                    </Link>
                     </div> }        
                     
                 </form>

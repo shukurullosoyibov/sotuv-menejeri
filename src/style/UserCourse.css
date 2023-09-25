@@ -1,0 +1,45 @@
+.userCourseSection{
+    padding: 40px 120px;
+    min-height: 70vh;
+    width: var(100vw - 240px);
+}
+.userCourseSection h1{
+
+    color: #000;
+    font-family: Poppins;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 140%; /* 44.8px */
+}
+.user_course_header {
+    min-height: 70vh;
+    width: var(100vw - 240px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    gap: 30px;
+}
+.user_course_header span{
+    display: grid;
+    place-items: center;
+    width: 128px;
+    height: 128px;
+    background: #EEF8FF;
+    border-radius: 50%;
+}
+.user_course_header span svg{
+    width: 59px;
+    height: 59px;
+    flex-shrink: 0;
+}
+.user_course_header p{
+    color: #000;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%; /* 25.2px */
+}

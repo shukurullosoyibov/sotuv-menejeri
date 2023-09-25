@@ -1,0 +1,60 @@
+.lesson_sections{
+    width: var(100vw - 240px);
+    height: 100vh;
+    background: #53d76034;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 30px 120px;
+    column-gap: 23px;
+}
+.lesson__list{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.lessonLists{
+    width: 384px;
+    height: 174px;
+    flex-shrink: 0;
+    border-radius: 18px;
+    background: #F7F8FA;
+    padding: 20px;
+}
+.lessonLists h2{
+    color: #000;
+    font-family: Poppins;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 140%; /* 25.2px */
+    padding-bottom: 17px;
+}
+.lesson_items{
+ display: flex;
+ flex-direction: column;
+ justify-content: flex-start;
+ align-content:center;
+ 
+ gap: 1rem;
+}
+.lesson__item{
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+gap: 1rem;
+    line-height: 27px;
+   
+}
+.lesson__item span.active,
+.lesson__item:hover
+{
+    color: #098BED;
+    font-weight: 600;
+     
+}
+.lesson_main{
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 66%;
+    gap: 24px;
+}

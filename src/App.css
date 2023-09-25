@@ -11,6 +11,19 @@
   max-width: 1440px;
   padding: 0 120px;
 }
+@media screen and (max-width: 768px) {
+  /* CSS kodlar, media query bajarilganda ishlaydi */
+  .content {
+    margin: 0 auto;
+    max-width: 768px;
+    padding: 0 auto;
+
+  }
+
+ 
+
+  /* Boshqa stil o'zgarishlari */
+}
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 .px__30{
@@ -42,7 +55,24 @@ line-height: normal;
  a{
   text-decoration: none;
  }
- .loader {
+ .load{
+  display: grid;
+  place-items: center;
+  width: 100vw;
+  height: 100vh; 
+  background-color: rgba(38, 38, 41, 0.2);
+ }
+ .load ScaleLoader{
+  display: flex;
+  gap: 20rem;
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  text-align: center;
+  border: 2px solid red;
+ }
+ /* .loader {
+
   width: 48px;
   height: 48px;
   border-radius: 50%;
@@ -94,5 +124,5 @@ line-height: normal;
   100% {
     transform: rotate(-360deg);
   }
-}
+} */
     

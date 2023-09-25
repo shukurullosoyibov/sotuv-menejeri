@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { Link, Outlet } from 'react-router-dom'
 import CaruselCard from '../components/CaruselCard'
-import { fikrApi } from '../style/config/config';
+import RingLoader from "react-spinners/RingLoader";
 import { svg_01, svg_like, svg_past, svg_true } from '../svgG/svg';
 import 'font-awesome/css/font-awesome.min.css';
+
+import CountUp from 'react-countup';
 
 
 const SectionsLayout = (props) => {
@@ -22,7 +24,7 @@ const SectionsLayout = (props) => {
           .then(data => {
             
             if (data.message === "success") {
-                console.log(data.data);
+               
               const items = data.data;
               setFikr(items);
             //   alert("Fikrlar yuklandi");
@@ -45,7 +47,7 @@ const SectionsLayout = (props) => {
             })
             .then(data => {
               if (data.message === "success") {
-                 console.log(data.data);
+                 
                 const item = data.data;
                 setBanner(item);
                 // alert("banner yuklandi");
@@ -68,7 +70,7 @@ const SectionsLayout = (props) => {
             })
             .then(data => {
               if (data.message === "success") {
-                 console.log(data.data);
+               
                 const item = data.data;
                 setMustaqiltalim(item);
                 // alert("banner yuklandi");
@@ -91,7 +93,7 @@ const SectionsLayout = (props) => {
             .then(data => {
               
               if (data.message === "success") {
-                  console.log(data.data);
+               
                 const items = data.data;
                 setService(items);
               
@@ -105,13 +107,18 @@ const SectionsLayout = (props) => {
             });
         }, []);
 
+      
    
   return (
   
     <>
-                    <Outlet/>
+              <Outlet/>
+              
+              
+                
                 <div className="header-main" style={{ background: `url(${banner.imageUrl})` }}>
-
+                   {  !banner.imageUrl ? <RingLoader color="#36d7b7" 
+                          size={150}></RingLoader> :
                         <div className='main-title'>
                             <p>{banner.text}</p>
                             {
@@ -119,7 +126,9 @@ const SectionsLayout = (props) => {
                             }
                            
                         </div>
+                    }
                 </div>
+              
                 {/* section-1 boshi */}
                     <div id='bizkimmiz' className="header__section-1 content">
                         <div className="section-1__title">
@@ -135,7 +144,7 @@ const SectionsLayout = (props) => {
                             <div className="expirens">
                                 <div className="clients">
                                     <div>
-                                        <span>+</span><h2>500</h2>
+                                        <p>+</p><h2><CountUp start={0} end={500} duration={20}/></h2>
                                     </div>
                                 
                                     <div className='exp__title'>
@@ -145,7 +154,7 @@ const SectionsLayout = (props) => {
                                 </div>
                                 <div className="experience">
                                     <div>
-                                        <span>+</span><h2>14 yil</h2>
+                                        <p>+</p><h2><CountUp start={0} end={14} duration={8} suffix='yil'></CountUp> </h2>
                                     </div>
                                     
                                         <div className='exp__title'>

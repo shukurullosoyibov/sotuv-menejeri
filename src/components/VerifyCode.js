@@ -93,7 +93,6 @@ const VerifyCode = (props) => {
         if (data.message === 'success') {
           setIsSuccess(true);
           setIsVerified(true);
-          alert('tabriklaymiz', data.status)
           console.log(data, isVerified, verificationError);
     
           // Tokenni olish va `localStorage` ga saqlash

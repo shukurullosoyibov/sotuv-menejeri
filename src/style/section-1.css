@@ -65,22 +65,31 @@ line-height: 106.5%;
 .expirens > div{
     display: flex;
     padding: 24px 40px;
-    flex-direction: row;
+
     justify-content: center;
     align-items: center;
     border-radius: 24px;
     background: rgba(170, 177, 204, 0.10);
 
 }
-.expirens span{
+.expirens div p{
     color: #098BED;
+    font-size: 38px;
+}
+.expirens div h2 span{
+    font-size: 38px;
+
+   color:#000;
     font-family: Poppins;
     font-size: 38px;
     font-style: normal;
     font-weight: 600;
     line-height: 140%; /* 53.2px */
 }
-
+.clients >div,
+.experience > div{
+    display: flex;
+}
 .clients > h2{
     color: #000;
     font-family: Poppins;
@@ -102,6 +111,8 @@ line-height: 106.5%;
 .experience
 {
     display: flex;
+    width: 198px;height: 123px;
+    justify-content: space-between;
     flex-direction: column;
 }
 /* section-1 title oxiri  */

@@ -284,3 +284,18 @@ line-height: 106.5%; /* 17.04px */
     transition: all 0.5s;
     color:#098BED;
 }
+
+@media screen and (max-width: 768px) {
+  
+    .nav-bar{
+        
+        
+    }
+    .header-main {
+      margin: 0 auto;
+      max-width: 750px;
+      padding: 0 auto;
+     
+    }
+
+}

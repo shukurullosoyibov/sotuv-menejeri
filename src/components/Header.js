@@ -6,11 +6,11 @@ import "../style/section-5.css"
 import '../style/footer.css'
 import '../style/registerModal.css'
 
-
+import { toast } from 'react-toastify';
 
 
 // import RegisterModal from './RegisterModal'
-import { Link, useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { fikrApi } from '../style/config/config'
 import { avg_sign, svg_drp, svg_korish, svg_logout, svg_user } from '../svgG/svg'
 
@@ -25,28 +25,11 @@ const Header = (props) => {
     const [logoUrl, setLogoUrl] = useState('');
     const [loading, setLoading] = useState(true);
     const [data, setData] = useState(null);
-  
+    const showInfoToast = () => {
+        toast.error('Tizimdan chiqdiz');
+      };
    
-    const getLogo = async () =>{
-        fetch("https://shark.brim.uz/api/home/site-logo")
-      .then(response => {
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-        return response.json();
-      })
-      .then(data => {
-        // API dan olingan "items" ma'lumotlarini saqlash
-        const items = data.data.logo;
-       
-        setLogoUrl(items);
-       
-      })
-      .catch(error => {
-     
-        console.error('Xatolik:', error);
-      });
-    }
+  
     const getTokenFromLocalStorage = () => {
         return localStorage.getItem('token');
       };
@@ -76,19 +59,20 @@ let token = getTokenFromLocalStorage();
 
             if (token) {
             fetchData(token).then((fetchedData) => {
-                console.log(data);
+                
                 setData(fetchedData);
-                alert(token);
+               
                 setLoading(false);
             });
             } else {
-                alert(' token olinmadi');
+                // alert(' token olinmadi');
 
             setLoading(false);
             }
         }, []);
         const clearTokenFromLocalStorage = () => {
             return localStorage.setItem('token', "");
+            showInfoToast();
           };
         
    
@@ -143,7 +127,7 @@ let token = getTokenFromLocalStorage();
                              <h5>
                               {data.data.firstname} {" "+data.data.lastname}
                             </h5>
-                            <Link to>
+                            <Link to="/userCourse">
                                 <span>{svg_korish} <h4>Mening kurslarim</h4></span>
                                
                             </Link>

@@ -1,12 +1,12 @@
 import './App.css';
+import ScaleLoader from "react-spinners/ScaleLoader";
 
 import {
 
   createBrowserRouter,
   createRoutesFromElements,
   RouterProvider,
-  Route,
-  Link
+  Route
 } from 'react-router-dom'  //v6.16.1
 import RootLayout from './layout/RootLayout';
 
@@ -21,14 +21,21 @@ import RegisterSigup from './components/RegisterSigup';
 
 import PaymentModal from './pages/PaymentModal';
 import { useEffect, useState } from 'react';
+import UserCourse from './pages/UserCourse';
+import { toast } from 'react-toastify';
+import LessonMain from './pages/LessonMain';
+import LessonLayout from './layout/LessonLayout';
+import LessonSrc from './components/LessonSrc';
 
 
 function App() {
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState(null);
+
   const getTokenFromLocalStorage = () => {
     return localStorage.getItem('token');
   };
+
   const fetchData = async (token) => {
     try {
       const response = await fetch('https://shark.brim.uz/api/', {
@@ -46,60 +53,81 @@ function App() {
       }
     } catch (error) {
       console.error(error);
+      throw error; // Xatoni o'z ichiga qabul qilib berish
     }
   };
-  
-
- 
 
   useEffect(() => {
     const token = getTokenFromLocalStorage();
-    alert(token)
-    if (token) {
-      fetchData(token).then((fetchedData) => {
-        setData(fetchedData);
-        setLoading(false);
-      });
-    } else {
+    setTimeout(()=>{
       setLoading(false);
+    },2000)
+    if (token) {
+      fetchData(token)
+        .then((fetchedData) => {
+          setData(fetchedData);
+          setLoading(false); // Ma'lumotlar olinganda "loading" ni o'chirish
+        })
+        .catch((error) => {
+          toast.error('Ma\'lumotlarni olishda xatolik yuz berdi');
+         // setLoading(false); // Xatolik yuz berdi, "loading" ni o'chirish
+        });
+    } else {
+      //setLoading(false); // Token mavjud emas, "loading" ni o'chirish
+      // toast.success('Hush kelibsiz mehmon');
     }
   }, []);
 
   if (loading) {
-    return <span class="loader"></span>;
+    return (
+      <div className="load">
+        <span>
+            <ScaleLoader
+              color="#36d7b7"
+              height={40}
+              margin={5}
+              radius={0}
+              width={20}
+            />
+        </span>
+        
+      </div>
+    );
   }
 
-  if (!data) {
-    // return <div>Error loading data</div>;
-  }
-
-
+  // if (!data) {
+  //   return (
+  //     <div>
+  //       Error loading data
+        
+  //     </div>
+  //   );
+  // }
 
   const routes = createBrowserRouter(
     createRoutesFromElements(
-
-        <Route  element={<RootLayout  />}>
-           
-            
-           
-          <Route path="/" element={<SectionsLayout   />}>
-                 <Route path='/login'  element={<RegisterModal    />}     />
-                 <Route path='/autho'  element={<RegisterSigup />}      />
-                 <Route path='/resetpassword' element={<ResetPaspord />} />
-            </Route>
-            <Route path="/courses" element={<My__Courses  />}  />
-            <Route path="/courses/:slug" element={< SelectesCourse />}  />
-            <Route path='/courses/:slug/payment' element={ <PaymentModal />} />
-            
-            <Route path="*" element={ <NotFound />} />
-               
+      <Route element={<RootLayout />}>
+        <Route path="/" element={<SectionsLayout />}>
+          <Route path='/login' element={<RegisterModal />} />
+          <Route path='/autho' element={<RegisterSigup />} />
+          <Route path='/resetpassword' element={<ResetPaspord />} />
         </Route>
+        <Route path="/courses" element={<My__Courses />} />
+        <Route path="/courses/:slug" element={<SelectesCourse />} />
+        <Route path='/courses/:slug/payment' element={<PaymentModal />} />
+        <Route path='/userCourse' element={<UserCourse />} />
+        <Route path='/lesson' element={<LessonLayout/>} >
+            <Route path='/lesson/salom' element={<LessonSrc/>} />
+        </Route>
+
+        <Route path="*" element={<NotFound />} />
+      </Route>
     )
-)
+  );
+
   return (
     <div className="App">
-   
-     <RouterProvider router={routes} />
+      <RouterProvider router={routes} />
     </div>
   );
 }
