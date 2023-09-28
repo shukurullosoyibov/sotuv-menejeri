@@ -1,7 +1,7 @@
 .lesson_sections{
     width: var(100vw - 240px);
-    height: 100vh;
-    background: #53d76034;
+    min-height: var(100% - 100px);
+  
     display: flex;
     flex-wrap: wrap;
     padding: 30px 120px;
@@ -14,11 +14,16 @@
 }
 .lessonLists{
     width: 384px;
-    height: 174px;
+    min-height: 194px;
     flex-shrink: 0;
     border-radius: 18px;
     background: #F7F8FA;
     padding: 20px;
+}
+.gorizt{
+    width: 358px;
+    height: 1px;
+    background: rgba(0, 0, 0, 0.10);;
 }
 .lessonLists h2{
     color: #000;
@@ -34,6 +39,15 @@
  flex-direction: column;
  justify-content: flex-start;
  align-content:center;
+ color: #000;
+font-family: Poppins;
+font-size: 18px;
+font-style: normal;
+font-weight: 400;
+line-height: 140%; /* 25.2px */
+padding: 14px 8px;
+
+
  
  gap: 1rem;
 }
@@ -57,4 +71,7 @@ gap: 1rem;
     flex-direction: column;
     flex: 1 0 66%;
     gap: 24px;
+}
+.user-mobile-course{
+    display: none;
 }

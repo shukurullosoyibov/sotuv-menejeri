@@ -49,31 +49,36 @@ const RegisterSigup = () => {
       
   
       // Parol mos kelgan bo'lsa, serverga so'rov yuborish
-      fetch(API_URL+'auth/register/register', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({firstname,lastname, phone, password,password_repeat }),
-      })
-        .then((response) => response.json())
-        .then((data) => {
-            
-            if(data.message==='success'){
-                localStorage.setItem("phone", phone);
-                toast("success");
-                setIsRegistered(true);
-               
-            }
-           
-          else {
-            setPasswordError(data.error);
-          
+      async function registerUser() {
+        try {
+          const response = await fetch(API_URL + 'auth/register/register', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ firstname, lastname, phone, password, password_repeat }),
+          });
+      
+          if (!response.ok) {
+            throw new Error('Network response was not ok');
           }
-        })
-        .catch((error) => {
+      
+          const data = await response.json();
+      
+          if (data.message === 'success') {
+            localStorage.setItem('phone', phone);
+            toast('success');
+            setIsRegistered(true);
+          } else {
+            setPasswordError(data.error);
+          }
+        } catch (error) {
           console.error('Xatolik yuz berdi: ', error);
-        });
+        }
+      }
+      
+      // registerUser funktsiyasini chaqirish
+      registerUser();
        
     }
     else if( !firstname){
@@ -94,7 +99,9 @@ const RegisterSigup = () => {
                     <div >
                         <label className='modal_input'>
                             Ism va familiya
-                            <input type="tel" placeholder='ism va familiyani kiriting' 
+                            <input 
+                            autoFocus={true}
+                            type="tel" placeholder='ism va familiyani kiriting' 
                             value={fish}
                             onChange={(e)=>handleFirstname(e.target.value)}
                             />
@@ -104,6 +111,7 @@ const RegisterSigup = () => {
                         <label   className='modal_input'>
                             Telefon raqamingiz
                             <input
+
                                 type="tel" 
                                 placeholder='+998 91' value={phone}
                                 onChange={(e)=>handlePhoneNumberChange(e)} // Telefon raqamini kiritish funksiyasi

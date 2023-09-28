@@ -62,13 +62,7 @@ const SelectesCourse = () => {
 
   }, []);
 
-  // if (loading) {
-  //   return <span class="loader"></span>;
-  // }
-
-  // if (!data) {
-  //   // return <div>Error loading data</div>;
-  // }
+ 
 
 
 
@@ -83,9 +77,8 @@ const SelectesCourse = () => {
     if (token) {
       fetchDataToken(token).then((fetchedData) => {
         setData(fetchedData);
-     
-        console.log(courseItmSlug );
-        console.log(slug);
+    
+        
         setLoading(false);
       });
     } else {
@@ -129,80 +122,61 @@ const SelectesCourse = () => {
   const handleVideo = () => {
     setVideo(!isVideo);
   }
-  const handelLessonModal = (slug) =>{
-    navigate("/lesson");
-  }
+
+    const handelLessonModal = () =>{
+      navigate(`/lesson/${slug}`);
+    }
+
+ 
+  
+  
   return (
     <>  { isShow &&  <PaymentModal courseDetails={courseDetails} handlShowModal={handlShowModal} />}
   
-    <div className='selected__course'>   
-        <div className="selesct__1">
+  <div class="courseDetalis content">
+          
+                    <div className="img">
+                    <img src={courseDetails.imageUrl} alt={courseDetails.title} />  
+                    </div>
+             
+                            {/* {select.map((course) => (
+                                <SelCourse key={course.id} course_item={course.course_item} course__name={course.course__name} length={course.course_item.length} />
+                            ))}
+                            (
+                                { <SelCourse  course_item={CourseDetalis.benefits} course__name={CourseDetalis.title} />} */}
+                           
+        <div class="title">
             <h3 className='h3'>
-            { courseDetails.title}
+                { courseDetails.title}
             </h3>
-            <p className='h3'>
-               
-                {courseItmSlug.short_description}
-            </p>
-            <div className="keyConsepts">
-                     <h5 className='h3'>
-                        Key Concepts Covered Include:
-                    </h5>
-                    {courseDetails.benefits && courseDetails.benefits.map((el, ind) => (
-                        <div className="div" key={ind}>
-                          <span>{svg_check}</span>
-                          <h4>
-                            {el.value}
-                          </h4>
-                        </div>
-                      ))}
-                    
-                   
-                
-            </div>
-            
-               <span> </span>
-               <div dangerouslySetInnerHTML={{ __html: courseDetails.description }} />
-               
-            
-            {
-                  !localStorage.getItem('token') ? 
-                  <Link to='/autho' className='btn btn_hover'>Ro'yxatdan o'tish</Link> :
-                  !courseDetails.is_free ? <button onClick={(e)=>handlShowModal(e) } className='btn btn_hover'>Sotib olish</button> :
-                  <button onClick={(e)=>handelLessonModal(e)} className='btn btn_hover'> Davom etish </button>
-            }
-           
-         
         </div>
-        <div className="selesct__2">
-            <div className="img">
-             <img src={courseDetails.imageUrl} alt={courseDetails.title} />  
+        <div class="descpritiopns">
+            <span> </span>
+                  <div dangerouslySetInnerHTML={{ __html: courseDetails.description }} />
             </div>
-              
-                   {courseDetails.openLessons && 
+        <div class="course_video_item">
+            <p>Course Content</p>
+        {courseDetails.openLessons && 
                     (  
-                      //courseDetails.openLessons.map((el, ind) =>(
-                    
-                  //       <SelCourse key={ind} {...el} courseDetails={courseDetails} />
-
-                    
-                  //  ))
+                     
                   <div className='course_1'>
                           <div className="main">
-                          <span>{svg_coursConte1}</span> 
-                            <span>
-                              
-                            {courseDetails.openLessons.title}
-                            </span>
-                            <div className='topicName'>
                                 
-                                  <div>
-                                      {1} topics  
-                                  </div>
-                            </div>
-                            <div className="dDOwn" onClick={() => handleVideo()} >
-                              {svg_down}
-                            </div>
+                                
+                                <div className='topicName'>
+                                  <span>
+                                    {svg_coursConte1}
+                                  </span>
+                                  <span>
+                                    { courseDetails.title}
+                                    <h6>{courseDetails.openLessons.length} topics </h6> 
+                                  </span>
+                                
+                                    
+                                </div>
+                                <div className="dDOwn" onClick={() => handleVideo()} >
+                                  {svg_down}
+                                </div>
                           </div>
                           {
                            isVideo &&  
@@ -210,7 +184,7 @@ const SelectesCourse = () => {
                           <div className="main__content">
                             <div className='lessonContent'>
                               <h4>Lesson Content</h4>
-                              <h3>0% COMPLETE 0/{} Steps</h3>
+                              <h3>0% COMPLETE 0/{courseDetails.openLessons.length} Steps</h3>
                             </div>{console.log(courseDetails)} 
                           {courseDetails.openActiveLessons && 
                           
@@ -238,19 +212,69 @@ const SelectesCourse = () => {
                    )
                    
                    } 
-
-            
-                    {/* {select.map((course) => (
-                        <SelCourse key={course.id} course_item={course.course_item} course__name={course.course__name} length={course.course_item.length} />
-                    ))}
-                     (
-                        { <SelCourse  course_item={CourseDetalis.benefits} course__name={CourseDetalis.title} />} */}
-                    
-           
-               
-
-            
         </div>
+        <div class="konspe">
+        <div className="keyConsepts">
+                     <h5 className='h3'>
+                        Key Concepts Covered Include:
+                    </h5>
+                    {courseDetails.benefits && courseDetails.benefits.map((el, ind) => (
+                        <div className="div" key={ind}>
+                          <span>{svg_check}</span>
+                          <h4>
+                            {el.value}
+                          </h4>
+                        </div>
+                      ))}
+                       <div className="selesct__1">
+                          <p className='h3'>
+                            
+                              {courseDetails.short_description}
+                          </p>
+                       </div>
+              
+          </div>
+              {
+                  !localStorage.getItem('token') ? 
+                  <Link to='/autho' className='btn btn_hover'>Ro'yxatdan o'tish</Link> :
+                  !courseDetails.is_free ? <button onClick={(e)=>handlShowModal(e) } className='btn btn_hover'>Sotib olish</button> :
+                  <button onClick={(e)=>handelLessonModal(e)} className='btn btn_hover'> Davom etish </button>
+             }
+           
+        </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div className='selected__course'>   
+       
+       
 
        
     </div>

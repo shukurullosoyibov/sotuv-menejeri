@@ -23,9 +23,27 @@ import PaymentModal from './pages/PaymentModal';
 import { useEffect, useState } from 'react';
 import UserCourse from './pages/UserCourse';
 import { toast } from 'react-toastify';
-import LessonMain from './pages/LessonMain';
+
 import LessonLayout from './layout/LessonLayout';
 import LessonSrc from './components/LessonSrc';
+import './style/Carusel.css';
+import './style/CourseSales.css';
+import './style/footer.css';
+import './style/Header.css';
+import './style/Lesson__src.css';
+import './style/LessonLayout.css';
+import './style/myCourses.css';
+import './style/PaymentModal.css';
+import './style/refisterSigInUp.css';
+import './style/registerModal.css';
+import './style/section-1.css';
+import './style/section-4.css';
+import './style/section-5.css';
+import './style/seleact.css';
+import './style/UserCourse.css';
+import './style/Verify.css';
+import './style/config/Responsive style/maxWidth576.css'
+
 
 
 function App() {
@@ -116,8 +134,8 @@ function App() {
         <Route path="/courses/:slug" element={<SelectesCourse />} />
         <Route path='/courses/:slug/payment' element={<PaymentModal />} />
         <Route path='/userCourse' element={<UserCourse />} />
-        <Route path='/lesson' element={<LessonLayout/>} >
-            <Route path='/lesson/salom' element={<LessonSrc/>} />
+        <Route path='/lesson/:slug' element={<LessonLayout/>} >
+            <Route path='/lesson/:slug/:id' element={<LessonSrc/>} />
         </Route>
 
         <Route path="*" element={<NotFound />} />

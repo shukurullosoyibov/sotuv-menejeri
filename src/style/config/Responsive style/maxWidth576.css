@@ -1,0 +1,382 @@
+@media only screen and (max-width: 576px) {
+
+    .cardIMG img
+    {
+    width: 500px;
+
+}
+    .header__section-5{
+       width: 0;
+       height: 0;
+    } 
+  
+    .section-5__1-f {
+        width: 100%;
+        margin: 0 12px;
+        padding: 0 autho;
+        
+    }
+    
+    .header__section-3{
+        display: flex;
+        flex-direction: column;
+    }
+     .section-3__title{
+        padding: 0;
+     }
+    .my__sale{
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+   
+    }
+    .my__sale > div{
+        display: flex;
+        flex-direction: row;
+    }
+    .sale__1{
+        gap: 12px;
+        height: 40px;
+        width: 90vw;
+        flex: 1 0 100px;
+
+
+    }
+    .btn{
+        width: 90vw;
+    }
+    .sale__title h6{
+        width: 80vw;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 140%; 
+    }
+
+
+    /* mustaqil talim */
+    /* .section-4__1 */
+    .section-4__1_f,
+    .section-5__1-f .my_name span,
+    .section-5__1-f .my_name a,
+    .section-5__1-f .my_name h3{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+       
+     
+        align-content:center;
+    }
+    .section-5__1-f .btn{
+        width: 460px;
+    }
+    .header__section-2 .my_name{
+        padding: 30px auto 18px auto;
+    }
+    .section-1__title-subtitle {
+        padding-top: 18px ;
+    }
+    .section-1__title-subtitle p{
+        
+        width: 90vw;
+    }
+    .section-1__img{
+        object-fit: contain;
+        height: 300px;
+        width: 90vw;
+    
+    }
+    .section-1__img .doshshed{
+        transform:  translate(-6px, 6px);
+        margin-bottom: 1rem;
+    }
+    .expirens{
+        width: 90vw;
+        justify-content: space-between;
+        align-items:space-between;
+    }
+    .clients,
+    .experience
+    {
+        width: 43vw;
+    }
+    .header__section-2{
+    
+        padding: 12px 0;
+    }
+    .card .img{
+        overflow: hidden;
+        width: 90vw;
+        height: 282px;      
+        border-radius: 12px;
+     
+       
+    }
+    .card .img img{
+        object-fit:fill;
+        width: 100%;
+        height: fit-content;
+       
+    
+    }
+    .card{
+        gap: 7px;
+    }
+    .cards{
+        margin: 18px 0 4px 0;
+    }
+    .header__section-2 .my_name h3{
+        color: #000;
+       
+        font-size: 24px;
+      
+        font-weight: 600;
+        line-height: 140%; /* 33.6px */
+    }
+    .header__section-2 .my_name span{
+        margin-top: 15px;
+    color: #098BED;
+    
+    font-size: 20px;
+  
+    font-weight: 400;
+    line-height: 106.5%; /* 17.04px */
+    }
+
+    .section-4__2 .section-4__2-cards{
+        width: 100%;
+        padding: 12px 4%;
+    }
+    .card__title__1 > span > svg{
+        width: 60px;
+        height: 60px;
+    }
+    .youTube__cards{
+        margin: 10px auto;
+        margin-bottom: 12px;
+        width: 100vw;
+        height: 254px;
+        flex-shrink: 0;
+    }
+    .you-tube__logo  {
+    
+        width: 100%;
+    }
+    .you-tube__logo iframe{
+        width: 92%;
+       
+    }
+    .content{
+        padding: 12px 4%;
+    }
+   .section-4_2_f--card{
+    width: 100%;
+    padding: 10px 4%;
+   }
+   .sectiot-5__youTube .my_name h3{
+    font-size: 28px;
+   }
+   .sectiot-5__youTube .my_name span{
+    font-size: 18px;
+   }
+   .footer{
+    height: max-content;
+    width: 100%;
+    padding: 20px 24px;
+   }
+   .footer__nav{
+    width: 100%;
+    padding: 14px 4%;
+    gap: 20px;
+    justify-content: center;
+    align-content:center;
+    align-items:center;
+    flex-direction: column;
+   }
+   .footer__nav ul{
+  gap: 14px;
+    display: flex;
+    flex-wrap: wrap;
+   }
+   .footer__nav ul li a{
+    width: 100px;
+    font-size: 20px;
+   
+    font-weight: 400;
+    flex-direction: 1 0 100px;
+   }
+   .footer .register{
+    display: none;
+    }
+   .btn_mobile{
+    display: block;
+    }
+    .section-4__1_f .btn{
+        display:none;
+    }
+    .footer p{
+        font-size: 18px;
+    }
+    .nav-bar .navUL.active{
+        position: fixed;
+      
+        z-index: 100;
+        
+    }
+    .main-title {
+        position: relative;
+        z-index: -1;
+    }
+    .myCoursesHeader .cards{
+      padding: 0;
+      /* margin: 0 auto; */
+      width: 100%;
+      display: grid;
+      place-items: center;
+        justify-content: center;
+      
+    }
+   
+    .card__link > a span{
+        font-size: 24px;
+        margin-right: 1rem;
+    }
+    .selected__course{
+        padding: 4%;flex-direction: column;
+    }
+    .selected__course .selesct__1{
+        order: 1;
+    }
+    .selesct__2 .img {
+        width: 100%;
+    }
+    .selesct__2 .img img{
+        height: auto;
+        object-fit: fill;
+        width: 100%;
+    }
+    
+  .img { order: 2;}
+  
+  .title { order:1;}
+  
+  .descpritiopns { order: 3; }
+  
+  .course_video_item { order: 4;}
+  
+  .konspe { order: 5;}
+  .courseDetalis{
+    display: flex;
+    flex-direction: column;
+    padding: 3%;
+  }
+  .course_1{
+    width: 100%;
+  }
+  .main__content{
+    width: 100%;
+  }
+  section.paymentSection{
+    width: 100vw;
+    padding: 4%;
+  }
+  .payment{
+
+    width: 100%;
+  }
+  .pay_img{
+   display: none;
+  }
+  .userCourseSection{
+    width: 100%;
+    padding: 3%!important;
+    
+  }
+  .userCourseSections{
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+  .userCourseSections > div{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row-reverse;
+    width: 100%;
+   
+  }
+  
+  .userCourseSections > div .cardIMG{
+    width: 100%;
+    height: auto;
+    display: grid;
+    place-items: center;
+  }
+  .userCourseSections > div .cardIMG img{
+    width: 95%;
+    
+    height: auto;
+  }
+  .userCourseCard{
+    width: 100%;
+    flex: 1 0 550px!important;
+  }
+ 
+  
+  .serCourseCard{
+    flex-direction: column!important;
+  }
+  .cardDetalis{
+    width: 50%;
+  }
+
+  .cardDetalis .secction .h2{
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+  }
+  div.lesson_sections{
+    width: 100%;
+    padding: 4%;
+  }
+  .lesson__list .user-mobile-course{
+    display: block;
+    color: #000;
+    font-family: Poppins;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 140%; /* 33.6px */
+
+  }
+  .lesson_sections .lessonLists{
+    width: 100%;
+  }
+  .lesson_sections .lesson_main{
+    width: 50%!important;
+  
+  }
+  .lesson_sections .lesson__src{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+  .videoPlayer {
+    width: 100%!important;
+  }
+  .lesson_sections .lesson__src h2{
+    flex:  0;
+  } 
+  .lesson_sections .prewNextLesson{
+    width: 100%;
+    justify-content: space-around;
+
+    
+  }
+  .lesson_sections .prewNextLesson .btn{
+    width: 40%;
+  }
+  
+}
+
+
+
+

@@ -19,6 +19,7 @@
     background-color:  #F7F8FA;
  
 }
+
 .logo{ cursor: pointer;
     text-decoration: none;
      width: 159px;
@@ -41,11 +42,48 @@
         font-weight: 600;
         line-height: 106.5%; /* 17.04px */
 }
+.nav-bar .mobile{
+    display: none;
+
+}
+.mobileLogo{
+    display: none;
+}
+
+.nav-bar .navUL.active{
+    padding: 4% 8% 50% 4%;
+   
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    justify-content: space-between;
+    align-content:flex-start;
+    align-items: flex-start;
+    z-index: 1001;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background: #FFF;
+   
+
+}
+.navUL.active li{
+    border-bottom: 1px solid red;
+
+}
+.mobileLogo.active{
+    width: 80vw;
+    display: flex;
+    justify-content: space-between;
+    
+}
 .nav-bar Link{
     text-decoration: none;
 }
 .nav-bar ul{
-    
+    justify-content: center;
+    align-items:center;
     text-decoration: none;
     list-style: none;
     display: flex;
@@ -110,10 +148,9 @@ ul > li a:hover{
     
     
  }
- .register.dropdown:hover,
  
- 
- .dropdown__item .btn__sign:hover{}
+
+ .dropdown__item .btn__sign:hover,
  .dropdown__item .btn__login:hover
  {
     
@@ -136,7 +173,7 @@ ul > li a:hover{
     cursor: pointer;
     
     /* transform: translateY(90px); */
-    transform: translate(-32% , 90px);
+    transform: translate(-32% , 68%);
     /* transform: translateX(40px); */
  }
  .btn__login,
@@ -176,8 +213,8 @@ ul > li a:hover{
 
 /* navbar oxiri */
 /* header main boshi */
-.header-main{
-    width: 100%;
+/* .header-main{
+    max-width: 1520px;
     height: 671px;
     display: flex;
     flex-direction: column;
@@ -185,9 +222,34 @@ ul > li a:hover{
     justify-content: center;
     
     flex-shrink: 0;
-    background: lightgray -402px -378.886px / 163.056% 196.704% no-repeat;
-    background-repeat: repeat;
+ 
+ 
     position: relative;
+}
+.header-main img{
+    width:100%;
+    height: auto;
+} */
+.header-main {
+    position: relative;
+    max-width: 1520px;
+    height: 671px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    overflow: hidden; /* Qolgan ishoratni olish uchun foydalanish mumkin */
+}
+
+.background-image {
+    position: absolute;
+   
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Rasmni o'lchami bo'yicha mos ravishda chizib olish */
+    z-index: -1; /* Foningizni qanday o'rnatsangiz, uni yuqori kat qiling */
 }
 .main-title{
    
@@ -284,18 +346,84 @@ line-height: 106.5%; /* 17.04px */
     transition: all 0.5s;
     color:#098BED;
 }
-
-@media screen and (max-width: 768px) {
-  
-    .nav-bar{
-        
-        
-    }
-    .header-main {
-      margin: 0 auto;
-      max-width: 750px;
-      padding: 0 auto;
-     
-    }
-
+#nav-bar{
+    width: 100vw;
 }
+@media only screen and (max-width: 576px) {
+   
+    .nav-bar{
+        padding: 18px 4% ;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .nav-bar ul{
+        display: none;
+        /* flex-direction: column; */
+    }
+    .nav-bar .mobile{
+        display: block;
+        background: #098BED;
+        padding: 6px;
+        
+        display: grid;
+        place-items: center;
+    }
+    
+    .container{
+        margin: 0 12px;
+    }
+   .content{
+    max-width: 576px;
+    padding: 20px 12px;
+   }
+   
+   .header__section-1{
+    flex-direction: column;
+    padding-top: 30px!important;
+   }
+  
+    
+    .header__section-3{
+        flex-direction: column;
+    }
+
+    .grid_item .my_name h3{
+        font-size: 24px;
+       
+        font-weight: 600;
+        line-height: 106.5%; 
+    }
+    .section-1__img{
+       padding: 0 12px; 
+    }
+    .header__section-3{
+        flex-direction: column-reverse;
+        flex-wrap: wrap;
+    }
+    .container.header-main {
+        background-color:#000;
+        object-fit: contain;
+        height: 370px;
+        max-width: 100%; /* Mobil qurilmalarda container o'lchamini to'liq ekran eniga mos ravishda o'zgartiring */
+       
+    }
+    
+    .container.header-main img.background-image {
+        z-index: 0;
+        object-fit: fill;
+        width: 110%;
+        height: fit-content; /* Mobil qurilmalarda foningizni to'liq ekran balandligiga mos ravishda o'zgartiring */
+    }
+
+    .main-title {
+        z-index: 999;
+        text-align: center; /* Matn o'rta joylashishi */
+    }
+    .grid_item.item-2{
+       width: 100%;
+       height: 80%;
+    }
+}
+
+

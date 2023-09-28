@@ -43,3 +43,139 @@
     font-weight: 400;
     line-height: 140%; /* 25.2px */
 }
+.centerRingLoader{
+    display: grid;
+    place-items: center;
+}
+.userCourseSections{
+    display: flex;
+    flex-direction: row;
+    min-height: var(100vh - 10px);
+    gap:20px;
+   padding-top: 24px;
+
+}
+
+.userCourseCard{
+    border-radius: 12px;
+    border: 1px solid #E3E9EE;
+    background: #FBFBFB;
+    flex: 1 0 590px;
+    padding: 20px;
+    max-width: 590px;
+    min-height: 250px;
+    flex-shrink: 0;
+    display: flex;
+    gap: 18px;
+   
+    flex-direction: row;
+}
+.cardIMG {
+    object-fit: cover;
+}
+
+.cardIMG img:hover{
+    transform: scale(1.05);
+    transition: 0.5s ease;
+}
+
+.cardIMG img{
+    border-radius: 12px;
+    width: 246px;
+    height: 210px;
+    object-fit: cover;
+    flex: 1 0 246px;
+    
+}
+.cardDetalis{
+    padding: 13px 0;
+    width: 90%;
+    gap:18px;
+    display: flex;
+    flex-direction: column;
+
+    
+}
+.cardDetalis .section{
+    display: flex;
+    
+   gap: 21px ;
+}
+.cardDetalis{
+        min-height: 80px;
+}
+.courseQuantity{
+
+    color: #098BED;
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 140%;
+}
+.cardDetalis p{
+    margin-top: 1rem;
+    color: rgba(0, 0, 0, 0.80);
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%; /* 19.6px */
+    width: 90%;
+    }
+.cardDetalis a{
+    color: #000;
+    font-family: Poppins;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 130%; 
+    display: flex;
+    align-items:center;
+    align-content: center;
+    color: #098BED;
+  
+
+}
+.cardDetalis a:hover {
+    cursor: pointer;
+    transform: translate(10px, 2px);
+    transition: all 0.5s;
+    color: var(--btn__hover)
+}
+.cardDetalis svg{
+    transform: translate(5px ,3px);
+   
+}
+.cardDetalis{
+   
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+line-height: 140%; /* 22.4px */
+}
+.courseQuantity{
+   color: #098BED;
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 140%;
+    margin-bottom: 12px;
+}
+.Rectang{
+    transform: translateY(12px);
+    width: 70%;
+    height: 12px;
+    flex-shrink: 0;
+    border-radius: 50px;
+    background: #E6EDF2;
+}
+.view{
+    
+    height: 12px;
+    flex-shrink: 0;
+    border-radius: 50px;
+    background: #098BED;
+}

@@ -1,16 +1,20 @@
 .videoPlayer{
    
-    max-width: 793px;
-    max-height: 440px;
+    width: 793px;
+    height: 440px;
+   
     flex-shrink: 0;
     border-radius: 12px;
+    object-fit: cover;
     overflow: hidden;
 }
 ReactPlayer{
-    width: 100%;
-    height: 100%;
+    
+    max-width: 793px;
+    max-height: 440px;
     border-radius: 12px;
 }
+
 .lesson__src{
 
     display: flex;
@@ -44,7 +48,29 @@ ReactPlayer{
     border-radius: 12px;
     background: #E53131;
 }
-
+.lesson__conspect{
+    padding: 24px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+.lesson__conspect > h2{
+    color: #000;
+font-family: Poppins;
+font-size: 32px;
+font-style: normal;
+font-weight: 600;
+line-height: 140%; /* 44.8px */
+}
+.lesson__conspect P{
+    max-width: 791px;
+    color: rgba(0, 0, 0, 0.80);
+    font-family: Poppins;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
 /* /// comment boshi  */
 
 .lesson__comment-section{
@@ -63,8 +89,78 @@ ReactPlayer{
     line-height: 140%; /* 33.6px */
 }
 .user_commnetInput{
+    display: flex;
+    flex-direction: column;
     overflow:  hidden ;
+    justify-content: flex-end;
+    align-items:flex-end;
+    gap: 1rem;
+}
+.noComments{
+    display: grid;
+    place-items: center;
+    padding: 50px 0;
 }
 .comment{
     overflow:  hidden ;
+}
+.comment textarea{
+    padding: 18px;
+    width: 793px;
+    height: 124px;
+    flex-shrink: 0;
+    border-radius: 12px;
+    border: 1px solid #CCD3DF;
+    background: #F7F8FA;
+    outline-color: #1c4a98;
+    color: #000;
+
+}
+.comment textarea:focus{
+    border: 1px solid #9f1b06;
+}
+textarea[placeholder-shown]   {
+    color: rgba(0, 0, 0, 0.30);
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%; /* 22.4px */
+}
+.user_commnetInput span{
+    width: 42px;
+    height: 42px;
+    flex-shrink: 0;
+    border-radius: 50%;
+   background: #098BED;
+    justify-self: flex-end;
+    display: grid;
+    place-items: center;
+   
+}
+.prewNextLesson{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.btn_send_hover:hover{
+    cursor: pointer;
+    background: #158de997;
+    transition: all 0.4s;
+}
+.btnPrew.btn{
+    background:#fff;
+    color:black;
+}
+.centerScaleLoader{
+    display: grid;
+    place-items: center;
+}
+.btnPrew.btn:hover
+
+{    cursor: pointer;
+
+    transition: all 0.4s;
+    background:#942413f2;
+   
 }

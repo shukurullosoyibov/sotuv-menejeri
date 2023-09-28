@@ -4,15 +4,15 @@
 }
 .header__section-5 .section-5__1-f{
     margin: 60px auto;
-    width: 973px;
+    max-width: 1520px;
     height: 314px;
-    flex-shrink: 0;
+    /* flex-shrink: 0; */
     border-radius: 24px;
     background: #F7F8FA;
     display: flex;
     justify-content: center;
     align-items:center;
-    padding: 47px 224px;
+    padding: 47px 264px;
 
 }
 .header__section-5 .section-5__1-f .my_name {

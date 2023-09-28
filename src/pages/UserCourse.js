@@ -1,20 +1,23 @@
 import React, { useEffect, useState } from 'react'
 import '../style/UserCourse.css';
-import { svg_korish } from '../svgG/svg';
+import { svg_korish, svg_ne, svg_next, svg_right, svg_right2 } from '../svgG/svg';
 import ScaleLoader from "react-spinners/ScaleLoader";
-import {  useNavigate } from 'react-router-dom';
+import {  Link, useNavigate } from 'react-router-dom';
 import {  toast } from 'react-toastify';
+import { RingLoader } from 'react-spinners';
 
 
 
 
 const UserCourse = () => {
-    const [isCourse, setCourse] = useState(false);
-    const [userCourse, setUserCourse] = useState([]);
+  
     const [courses, setCourses] = useState([]);
     const [loading, setLoading] = useState(true);
     const navigate = useNavigate();
     const token = localStorage.getItem('token');
+  
+
+    
     useEffect(() => {
     // Tokenni "localStorage" dan olish
    
@@ -46,54 +49,22 @@ const UserCourse = () => {
       if (response.ok) {
         const data = await response.json();
          console.log(data);
-        setCourses(data.courses);
+         const items = data.data;
+          
+         
+        setCourses(items);
+        
         setLoading(false);
       } else {
         // Serverdan yoki token to'g'ri kelmasa
-        // history.push('/login'); // O'zgartirilgan sahifa yo'li
+        // .push('/login'); // O'zgartirilgan sahifa yo'li
       }
     } catch (error) {
       console.error('Xatolik yuz berdi: ', error);
     }
   };
 
-  if (loading) {
-    return <div className="load">
-              <span>
-                    <ScaleLoader
-                      color="#36d7b7"
-                      height={40}
-                      margin={5}
-                      radius={0}
-                      width={20}
-                    />
-                </span>
-    </div>
    
-  }
-
-    // useEffect(() => {
-    //     fetch('https://shark.brim.uz/api/profile-manager/profile/my-courses')
-    //       .then(response => {
-    //         if (!response.ok) {
-    //           throw new Error('Network response was not ok');
-    //         }
-    //         return response.json();
-    //       })
-    //       .then(data => {
-    //         // API dan olingan "items" ma'lumotlarini saqlash
-    //         const items = data.data;
-           
-    //         setCourses(items);
-           
-    //       })
-    //       .catch(error => {
-         
-    //         console.error('Xatolik:', error);
-    //       });
-    //   }, []);
-
-
 
   return (
     <div className='userCourseSection'>
@@ -101,7 +72,7 @@ const UserCourse = () => {
               Mening kurslarim
         </h1>
       {
-        !isCourse ? 
+        !courses ? 
         <div className='user_course_header'>
             <span>
                
@@ -112,8 +83,56 @@ const UserCourse = () => {
             Hozircha hech qanday kurslar topilmadi!
             </p>
         </div> :
-        <div>
-            birinchi kurs
+        <div className='userCourseSections'>
+           
+          { !loading ?
+            courses.items.map(el => (
+             
+
+            
+              <div key={el.id} {...el} className="userCourseCard">
+                  <div className="cardIMG">
+                      <img src={el.imageUrl} alt={el.title} />
+                  </div> 
+                  <div className="cardDetalis">
+                   
+                      <div className='secction'>
+                            <h2>
+                                { 
+                                  el.title
+                                }
+                              </h2>
+                              <p>
+                                { el.short_description.slice(0,80)}...
+                              </p>
+                        </div>
+                         
+                      
+                      <div className='secction' >
+                                <span className='courseQuantity'> 
+                                    {el.completedPercent} / 100 % 
+                                </span>
+                                <div className="Rectang">
+                                  <div className="view" style={{ width: el.completedPercent + '%' }}></div>
+                                </div>
+
+                        </div>
+                       
+                      <Link  to={`/lesson/${el.slug}`} >O'qishni boshalsh <span>{svg_ne}</span></Link>
+                  </div> 
+            </div> 
+
+            ))
+            :   <span className='centerRingLoader'>
+                  <RingLoader 
+                    color="#36d7b7" 
+                   size={70} 
+                   /> 
+                   </span> 
+          }
+              
+              
+                      
         </div>
       }
 

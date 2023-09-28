@@ -5,6 +5,8 @@ import '../style/Carusel.css';
 import CaruselItem from './CaruselItem';
 import { Link } from 'react-router-dom';
 import { HomeCourseApi } from '../style/config/config';
+import { RingLoader } from 'react-spinners';
+import '../style/config/Responsive style/maxWidth576.css'
 
 const CaruselCard = () => {
     const [courses, setCourses] = useState([]);
@@ -34,9 +36,10 @@ const CaruselCard = () => {
     return (
         // kurslarni carusel qismini boshi
         <>
+         {courses.length > 0 ? (
             <div className='cards'>
           
-            {courses.length > 0 ? (
+           
           <AliceCarousel
             autoPlay
             autoPlayInterval={2500}
@@ -47,16 +50,27 @@ const CaruselCard = () => {
             ))}
             responsive={{
               0: { items: 1 },
-              600: { items: 3 },
+              100: { items: 1 },
+             
+              600: { items: 1 },
+              620: { items: 1 },
+              900: { items: 3 },
+              
+             
             }}
           />
+          </div>
         ) : (
-          <p>Ma'lumotlar yuklanmoqda...</p>
+         <section className='caruselSectionLoader'>
+                    <p>Ma'lumotlar yuklanmoqda...</p>
+                    <RingLoader color="#36d7b7" 
+                          size={150}></RingLoader>
+         </section> 
         )}
             
             {/* cardlar oxiri */}
            
-            </div>
+           
             <div className='all_view-btn '>
                     <Link to='/courses' className='all_view btn btn_hover '>
                             Barchasini ko’rish

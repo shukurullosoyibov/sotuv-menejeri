@@ -6,24 +6,21 @@
 
  
 }
-.content{
+.container{
   margin: 0 auto;
   max-width: 1440px;
+}
+.content{
+  margin: 0 auto;
+  max-width:1520px ;
   padding: 0 120px;
 }
-@media screen and (max-width: 768px) {
-  /* CSS kodlar, media query bajarilganda ishlaydi */
-  .content {
-    margin: 0 auto;
-    max-width: 768px;
-    padding: 0 auto;
 
-  }
 
  
 
   /* Boshqa stil o'zgarishlari */
-}
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 .px__30{
@@ -38,8 +35,7 @@
 
  .App{
   
-  margin: 0 auto;
-  max-width: 1440px;
+ 
  
  }
  .h3{
@@ -71,58 +67,3 @@ line-height: normal;
   text-align: center;
   border: 2px solid red;
  }
- /* .loader {
-
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  display: inline-block;
-  position: relative;
-  border: 3px solid;
-  border-color: #FFF #FFF transparent transparent;
-  box-sizing: border-box;
-  animation: rotation 1s linear infinite;
-}
-.loader::after,
-.loader::before {
-  content: '';  
-  box-sizing: border-box;
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  margin: auto;
-  border: 3px solid;
-  border-color: transparent transparent #FF3D00 #FF3D00;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  box-sizing: border-box;
-  animation: rotationBack 0.5s linear infinite;
-  transform-origin: center center;
-}
-.loader::before {
-  width: 32px;
-  height: 32px;
-  border-color: #FFF #FFF transparent transparent;
-  animation: rotation 1.5s linear infinite;
-}
-    
-@keyframes rotation {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-} 
-@keyframes rotationBack {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(-360deg);
-  }
-} */
-    

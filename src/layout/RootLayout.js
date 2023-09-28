@@ -10,7 +10,7 @@ function RootLayout() {
     <>
   
         <Header />
-        <main>
+        <main className=''>
             <Outlet/>
         </main>
 

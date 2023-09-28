@@ -116,7 +116,9 @@ const SectionsLayout = (props) => {
               
               
                 
-                <div className="header-main" style={{ background: `url(${banner.imageUrl})` }}>
+                {/* <img className=" container header-main" src={banner.imageUrl} alt='rasm' > 
+               { /*style={{ background: `url(${banner.imageUrl})` }}}
+               
                    {  !banner.imageUrl ? <RingLoader color="#36d7b7" 
                           size={150}></RingLoader> :
                         <div className='main-title'>
@@ -127,16 +129,35 @@ const SectionsLayout = (props) => {
                            
                         </div>
                     }
+                </img> */}
+                <div className="container header-main">
+                {banner.imageUrl ? (
+                    <img src={banner.imageUrl} alt='rasm' className='background-image' />
+                ) : (
+                    <RingLoader color="#36d7b7" size={150}></RingLoader>
+                )}
+                <div className='main-title'>
+                    <p>{banner.text}</p>
+                    {banner.button_url && <a href={banner.button_url} className="btn btn_hover">{banner.button_label}</a>}
                 </div>
+            </div>
+            
               
                 {/* section-1 boshi */}
-                    <div id='bizkimmiz' className="header__section-1 content">
-                        <div className="section-1__title">
+                    <div id='bizkimmiz' className=" container header__section-1 content grids">
+                        <div className="grid_item item-1 section-1__title">
                             <div className="my_name">
                                 <span>01.Kim?</span>
                                 <h3>Islombek Ibragimov</h3>
                             </div>
-                            <div className="section-1__title-subtitle">
+                           
+                        </div>
+                        <div className=" grid_item item-2 section-1__img">
+                            
+                            <div className="doshshed"></div>
+                        </div>
+                        <div className="grid_item item-3">
+                        <div className="section-1__title-subtitle">
                                 <p>
                                 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
                                 </p>
@@ -163,12 +184,10 @@ const SectionsLayout = (props) => {
                                 </div>
                             </div>
                         </div>
-                        <div className="section-1__img">
-                            
-                            <div className="doshshed"></div>
-                        </div>
                 </div>
                 {/* secton-1 oxiri */}
+
+
                 {/* section-2 boshi */}
                 <div id='kurslar' className="header__section-2 content">
                         <div className="my_name">
@@ -178,20 +197,31 @@ const SectionsLayout = (props) => {
                     { <CaruselCard  />}
                 </div>
                 {/* section-2 oxiri */}
+
+
+                
                 {/* section-3 boshi */}
                 <div id="xizmatlar" className='header__section-3 content'>
-                        <div className="section-1__title">
+                       {
+                        !service ? 
+                        <section className='caruselSectionLoader'>
+                                <p>Ma'lumotlar yuklanmoqda...</p>
+                                <RingLoader color="#36d7b7" 
+                                      size={150}></RingLoader>
+                        </section> :
+                       
+                        <div className="section-3__title">
                                     <div className="my_name">
                                         <span>01.Kim?</span>
                                         <h3>{service.title}</h3>
                                     </div>
-                                    <div className="section-1__title-subtitle">
+                                    <div className="section-3__title-subtitle">
                                         <p>
                                         {service.content}
                                         </p>
                                     </div>
-                                    <div className="my__sales">
-                                        <div className="my__sale">
+                                   
+                                    <div className="my__sale">
 
                                             {  service.serviceItems &&
                                                ( service.serviceItems.map((el,ind) =>(
@@ -217,9 +247,10 @@ const SectionsLayout = (props) => {
                                             </Link>
                                         </div>
                                         
-                                    </div>
+                                   
                         </div>
-                        <div className="section-1__img section_3">
+                          }
+                        <div className="section-3__img section_3">
                             <div className="section__3-img" style={{ background: `url(${service.imageUrl})` }} >
 
                             <div className="doshshed"></div>
@@ -252,9 +283,11 @@ const SectionsLayout = (props) => {
                                 <span>
                                     {svg_like}
                                 </span> 
-                                <h4>Mijozlardan so’shiklar eshitib <span>1-2 yilda</span></h4>
+                                <h4>Mijozlardan so’kishlar eshitib <span>1-2 yilda</span></h4>
                             </div>
+                            <Link to="/autho" className="btn btn_hover btn_mobile">Ro’yxatdan o’tish</Link>
                         </div>
+                        
                     </div>
                     <div className="section-4__2">
                         {  mustaqiltalim &&

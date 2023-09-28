@@ -42,11 +42,20 @@
   height: 53px;
 
     display: flex;
-    justify-content: space-between;
-}
+   
+   
+} 
 .topicName{
-    flex: 1 0 80%;
+   
     justify-self: flex-start;
+}
+.topicName span{
+    color: #000;
+    font-family: Poppins;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 140%; /* 25.2px */
 }
 .course_1{
     padding: 20px;

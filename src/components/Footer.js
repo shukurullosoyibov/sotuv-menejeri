@@ -6,7 +6,7 @@ function Footer() {
     <>
         {/* footer boshi */}
             <div className="footer">
-                    <div className="nav-bar footer__nav">
+                    <div className="footer__nav">
                             <Link to="/"> 
                                 <div className="logo">
                                     <span>Logo</span> 
@@ -25,6 +25,9 @@ function Footer() {
                                 <i className="rig btn btn_hover"><Link to='/autho'>Ro'yxatdan o'tish</Link></i>
                             </div>
                     </div>
+                    <p>
+                         www. loremipsum.uz barcha huqular himoyalangan
+                    </p>
             </div>
         {/* footer   oxiri */}
     </>

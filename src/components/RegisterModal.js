@@ -6,6 +6,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { API_URL } from '../style/config/config';
 import { toast } from 'react-toastify';
 import ScaleLoader from "react-spinners/ScaleLoader";
+import { RingLoader } from 'react-spinners';
 
 
 //const USER_REGEX = /^[a-zA-Z][a-zA-Z0-9-_]{3,24}$/;
@@ -20,9 +21,10 @@ const RegisterModal = () => {
 
     const LoaderFunction = () =>{
       setLoading(true);
-      alert('loader ishlado');
+      
       setTimeout( ()=>{
-        setLoading(false)
+        setLoading(false);
+        navigate('/');
       }, 2000)
     }
 
@@ -67,7 +69,7 @@ const RegisterModal = () => {
             showSuccessToast();
             const token = data.data.token;
             localStorage.setItem('token', token);
-            navigate('/');
+            
           } else {
             showErrorToast();
             setUsername("");
@@ -85,24 +87,21 @@ const RegisterModal = () => {
       }
     };
     
-      if (loading){
-        return   <ScaleLoader
-                    color="#36d7b7"
-                    height={40}
-                    margin={5}
-                    radius={0}
-                    width={20}
-                  />
-      }
+      // if (loading){
+      //   return   <RingLoader 
+      //           color="#36d7b7" 
+      //           size={150} />
+      // }
   return (
     <>  
 
-            <div div className='register__modal'>
-                 {  !loading ?
+            <div className='register__modal'>
+                
                    
                    
-                    
+                   
                     <div className="reg__modal__el">
+                    {  !loading ?
                         <form >
                             <p >
                                 Tizimga kirish
@@ -113,6 +112,7 @@ const RegisterModal = () => {
                                     <InputMask
                                     alwaysShowMask={true}
                                 //    mask="+998 (99) 999 99 99" // Specify the desired phone number mask
+                                     autoFocus={true}
                                     onChange={(e)=> handlePhoneChange(e.target)}
                                     placeholder='+998'
                                     type="text"
@@ -146,19 +146,16 @@ const RegisterModal = () => {
                             </div> }        
                             
                         </form>
+                      :
+                      <RingLoader 
+                         color="#36d7b7" 
+                         size={70} />
+                       }
                         <Link to='/' className='modal__close'>
                                    {svg_x}
                         </Link>
                     </div>
-                   :
-                   <div className='load'>
-                       <ScaleLoader
-                          color="#36d7b7"
-                          cssOverride={{}}
-                          size={200}
-                        />
-                   </div>
-                    }
+                   
                     
 
             </div>
